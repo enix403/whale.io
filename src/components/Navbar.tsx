@@ -7,6 +7,7 @@ import SettingsIcon from "/Settings-Icon-nav.svg";
 import TransactionIcon from "/Transaction-Icon-nav.svg";
 import WalletIcon from "/Wallet-Icon-nav.svg";
 
+import { Button } from "./Button";
 import Avatar from "/Avatar-Image.png";
 import VerifiedCheck from "/verified-check.svg";
 import WhaleLogo from "/whale-logo.png";
@@ -44,9 +45,10 @@ export function Navbar() {
       </div>
 
       <div className='px-5'>
-        <button className='flex w-full rounded-2.5xl bg-a-green p-4 shadow-white hover:bg-a-green/80'>
+        {/* <button className='flex w-full rounded-2.5xl bg-a-green p-4 shadow-white hover:bg-a-green/80'>
           <p className='flex-1 self-center font-bold'>Dashboard</p>
-        </button>
+        </button> */}
+        <Button label="Dashboard" />
       </div>
 
       <div className='mt-10 px-9'>
