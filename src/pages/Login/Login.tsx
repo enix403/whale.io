@@ -1,6 +1,6 @@
-import QrCpde from "/Qrcode.svg";
-import Lock from "/lock.svg";
-import vecBlocks from "/vector-blocks.png";
+import QrCpde from "./Qrcode.svg";
+import Lock from "./lock.svg";
+import vecBlocks from "./vector-blocks.png";
 import whaleLogo from "/whale-logo.png";
 
 import {

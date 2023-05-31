@@ -1,22 +1,22 @@
-import ChatIcon from "/Chat-Icon-nav.svg";
-import ExchangeIcon from "/Exchange-Icon-nav.svg";
-import MarketIcon from "/Market-Icon-nav.svg";
-import NewsIcon from "/News-Icon-nav.svg";
-import PriceIcon from "/Price-Icon-nav.svg";
-import SettingsIcon from "/Settings-Icon-nav.svg";
-import TransactionIcon from "/Transaction-Icon-nav.svg";
-import WalletIcon from "/Wallet-Icon-nav.svg";
+import ChatIcon from "./Chat-Icon-nav.svg";
+import ExchangeIcon from "./Exchange-Icon-nav.svg";
+import MarketIcon from "./Market-Icon-nav.svg";
+import NewsIcon from "./News-Icon-nav.svg";
+import PriceIcon from "./Price-Icon-nav.svg";
+import SettingsIcon from "./Settings-Icon-nav.svg";
+import TransactionIcon from "./Transaction-Icon-nav.svg";
+import WalletIcon from "./Wallet-Icon-nav.svg";
 
-import { Button } from "./Button";
-import Avatar from "/Avatar-Image.png";
-import VerifiedCheck from "/verified-check.svg";
+import { Button } from "components/Button";
+import Avatar from "./Avatar-Image.png";
+import VerifiedCheck from "./verified-check.svg";
 import WhaleLogo from "/whale-logo.png";
 
-interface NavLinkProps {
+interface SidebarLinkProps {
   name: string;
   iconUrl: string;
 }
-function NavLink(props: NavLinkProps) {
+function SidebarLink(props: SidebarLinkProps) {
   return (
     <div className='group mt-6 flex cursor-pointer first:mt-0'>
       <img src={props.iconUrl} className='mr-4 h-6 w-6' />
@@ -27,7 +27,7 @@ function NavLink(props: NavLinkProps) {
   );
 }
 
-export function Navbar() {
+export function Sidebar() {
   return (
     <div className='fixed left-0 top-0 flex min-h-full w-64 flex-col bg-a-dark-300'>
 
@@ -52,19 +52,19 @@ export function Navbar() {
       </div>
 
       <div className='mt-10 px-9'>
-        <NavLink iconUrl={ExchangeIcon} name='Exchange' />
-        <NavLink iconUrl={PriceIcon} name='Live Prices' />
-        <NavLink iconUrl={WalletIcon} name='Wallet' />
-        <NavLink iconUrl={MarketIcon} name='NFT Market' />
-        <NavLink iconUrl={TransactionIcon} name='Transaction' />
-        <NavLink iconUrl={SettingsIcon} name='Settings' />
-        <NavLink iconUrl={NewsIcon} name='News' />
+        <SidebarLink iconUrl={ExchangeIcon} name='Exchange' />
+        <SidebarLink iconUrl={PriceIcon} name='Live Prices' />
+        <SidebarLink iconUrl={WalletIcon} name='Wallet' />
+        <SidebarLink iconUrl={MarketIcon} name='NFT Market' />
+        <SidebarLink iconUrl={TransactionIcon} name='Transaction' />
+        <SidebarLink iconUrl={SettingsIcon} name='Settings' />
+        <SidebarLink iconUrl={NewsIcon} name='News' />
       </div>
 
       <div className='flex-1'></div>
       <div className='px-9 mb-8'>
         <p className='text-sm text-a-white-200'>Insights</p>
-        <NavLink iconUrl={ChatIcon} name='Inbox' />
+        <SidebarLink iconUrl={ChatIcon} name='Inbox' />
       </div>
     </div>
   );
