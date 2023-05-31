@@ -13,12 +13,12 @@ import WhaleLogo from "/whale-logo.png";
 
 interface NavLinkProps {
   name: string;
-  iconURL: string;
+  iconUrl: string;
 }
 function NavLink(props: NavLinkProps) {
   return (
     <div className='group mt-6 flex cursor-pointer first:mt-0'>
-      <img src={props.iconURL} className='mr-4 h-6 w-6' />
+      <img src={props.iconUrl} className='mr-4 h-6 w-6' />
       <span className='text-a-white-300 transition-all group-hover:text-white'>
         {props.name}
       </span>
@@ -50,19 +50,19 @@ export function Navbar() {
       </div>
 
       <div className='mt-10 px-9'>
-        <NavLink iconURL={ExchangeIcon} name='Exchange' />
-        <NavLink iconURL={PriceIcon} name='Live Prices' />
-        <NavLink iconURL={WalletIcon} name='Wallet' />
-        <NavLink iconURL={MarketIcon} name='NFT Market' />
-        <NavLink iconURL={TransactionIcon} name='Transaction' />
-        <NavLink iconURL={SettingsIcon} name='Settings' />
-        <NavLink iconURL={NewsIcon} name='News' />
+        <NavLink iconUrl={ExchangeIcon} name='Exchange' />
+        <NavLink iconUrl={PriceIcon} name='Live Prices' />
+        <NavLink iconUrl={WalletIcon} name='Wallet' />
+        <NavLink iconUrl={MarketIcon} name='NFT Market' />
+        <NavLink iconUrl={TransactionIcon} name='Transaction' />
+        <NavLink iconUrl={SettingsIcon} name='Settings' />
+        <NavLink iconUrl={NewsIcon} name='News' />
       </div>
 
       <div className='flex-1'></div>
       <div className='px-9 mb-8'>
         <p className='text-sm text-a-white-200'>Insights</p>
-        <NavLink iconURL={ChatIcon} name='Inbox' />
+        <NavLink iconUrl={ChatIcon} name='Inbox' />
       </div>
     </div>
   );

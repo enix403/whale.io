@@ -18,6 +18,7 @@ export default {
           900: "#0B0E13",
         },
         'a-green': "#0CAF60",
+        'a-dgreen': "#B1FE34",
         'a-white': {
           100: '#808195',
           200: '#C3CDDB',

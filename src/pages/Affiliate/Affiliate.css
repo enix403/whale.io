@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .circle-bullet {
+    list-style-image: url("/public/list-bullet.png");
+  }
+}

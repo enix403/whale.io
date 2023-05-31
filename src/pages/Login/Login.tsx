@@ -98,12 +98,11 @@ function LoginPane() {
         <Input leftIcon={RefCode} placeholder='Referral Code (Optional)' />
 
         <button className='flex w-full rounded-4xl bg-a-green p-4 shadow-white hover:bg-a-green/80'>
-          <p className='flex-1 self-center'>Continue</p>
+          <p className='flex-1 self-center font-semibold'>Continue</p>
           <div>{ArrowRight}</div>
         </button>
       </div>
 
-      {/* Continue */}
       <div className='mt-10 flex items-center px-12'>
         <div className='flex-1 border border-a-white-100/20' />
         <span className='mx-2 whitespace-nowrap font-bold'>
