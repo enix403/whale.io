@@ -1,0 +1,25 @@
+@tailwind components;
+
+@layer components {
+  .history-table {
+    @apply w-full;
+    @apply m-0;
+    @apply border-collapse;
+
+    @apply [&_td]:text-left;
+  }
+  .history-table th {
+    @apply text-left;
+    @apply font-normal;
+    @apply text-xs;
+  }
+
+  .history-table td:first-child,
+  .history-table th:first-child {
+    @apply pl-8;
+  }
+  .history-table td:last-child,
+  .history-table th:last-child {
+    @apply pr-8;
+  }
+}

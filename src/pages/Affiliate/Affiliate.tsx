@@ -1,4 +1,4 @@
-import { Sidebar } from "components/Sidebar";
+import { Contents, Sidebar } from "components/Sidebar";
 
 import { Button } from "components/Button";
 import "./Affiliate.css";
@@ -150,7 +150,7 @@ export function AffiliatePage() {
   return (
     <>
       <Sidebar />
-      <div className='w-full pl-64'>
+      <Contents>
         <div className='px-12 py-20'>
           <div className='xl:flex'>
             <div className='flex-1 xl:px-12'>
@@ -165,7 +165,7 @@ export function AffiliatePage() {
             </div>
           </div>
         </div>
-      </div>
+      </Contents>
     </>
   );
 }
