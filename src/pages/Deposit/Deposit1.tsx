@@ -1,9 +1,14 @@
 import { Button } from "components/Button.tsx";
+import { Exchange, ExchangeCircle, ExchangeSide } from "components/Exchange";
 import { InputGroup } from "components/InputGroup.tsx";
 import { QuestionMarkHeader } from "components/QuestionMarkHeader";
 import { Contents, Sidebar } from "components/Sidebar";
 import { BTCAlert, CoinSelect, TipsDeposit } from "./common.tsx";
 
+import CoinEthereum from "assets/CoinEthereum.png";
+import CoinUSDT from "assets/CoinUSDT.svg";
+import SwapIconV from "assets/SwapIconV.svg";
+import CalculatorIcon from "./CalculatorIcon.svg";
 import Dollar from "./Dollar.svg";
 import RightArrow from "/btn-right-arrow.svg";
 
@@ -80,10 +85,26 @@ function DepositPane() {
 function PricePane() {
   return (
     <>
-      <h1 className='flex items-center text-lg font-bold'>
-        <span className='mx-2'>Profit Calculator</span>
+      <h1 className='mb-10 flex items-center justify-between pr-10 text-lg font-bold'>
+        <span className='ml-2'>Profit Calculator</span>
+        <img src={CalculatorIcon} />
       </h1>
-      <div className='mx-10 absolute bottom-40'>
+
+      <Exchange
+        from={
+          <ExchangeSide sideName='I invest' icon={CoinEthereum} value={"$1000"} />
+        }
+        to={<ExchangeSide sideName='I Get' icon={CoinUSDT} value={"$1444"} />}
+        circle={
+          <ExchangeCircle>
+            <div className='box-center h-full w-full rounded-full bg-a-dark-300'>
+              <img src={SwapIconV} />
+            </div>
+          </ExchangeCircle>
+        }
+      />
+
+      <div className='mx-10 mt-16 xl:mt-72'>
         <BTCAlert />
       </div>
     </>
@@ -99,7 +120,7 @@ export function Deposit1Page() {
           <div className='mx-4 flex-[2] p-6'>
             <DepositPane />
           </div>
-          <div className='mx-4 mt-8 flex-[1] py-6 xl:mt-0 relative'>
+          <div className='mx-4 mt-8 flex-[1] py-6 xl:mt-0'>
             <PricePane />
           </div>
         </div>
