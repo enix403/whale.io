@@ -43,6 +43,7 @@ export const RefCode = (
   </svg>
 );
 
+/*
 export const ArrowRight = (
   <svg
     width='35'
@@ -77,6 +78,7 @@ export const ArrowRight = (
     </defs>
   </svg>
 );
+ */
 
 export const Check = (
   <svg

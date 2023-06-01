@@ -1,11 +1,12 @@
 import QrCpde from "./Qrcode.svg";
 import Lock from "./lock.svg";
 import vecBlocks from "./vector-blocks.png";
+import RightArrow from "/btn-right-arrow.svg";
 import whaleLogo from "/whale-logo.png";
 
+import { Button } from "components/Button";
 import { ButtonSwitch } from "components/ButtonSwitch";
 import {
-  ArrowRight,
   AtRate,
   Check,
   OrgApple,
@@ -93,10 +94,14 @@ function LoginPane() {
         />
         <Input leftIcon={RefCode} placeholder='Referral Code (Optional)' />
 
-        <button className='flex w-full rounded-4xl bg-a-green p-4 shadow-white hover:bg-a-green/80'>
-          <p className='flex-1 self-center font-semibold'>Continue</p>
-          <div>{ArrowRight}</div>
-        </button>
+        <Button
+          label='Continue'
+          rightElement={
+            <div>
+              <img src={RightArrow} />
+            </div>
+          }
+        />
       </div>
 
       <div className='mt-10 flex items-center px-12'>

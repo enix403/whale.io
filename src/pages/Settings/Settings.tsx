@@ -1,10 +1,10 @@
-import { Contents, Sidebar } from "components/Sidebar";
-
-import { QuestionMarkHeader } from "components/QuestionMarkHeader";
-
+import { Button } from "components/Button";
 import { ButtonSwitch } from "components/ButtonSwitch";
+import { QuestionMarkHeader } from "components/QuestionMarkHeader";
+import { Contents, Sidebar } from "components/Sidebar";
 import React from "react";
 import "./Settings.css";
+import RightArrow from "/btn-right-arrow.svg";
 
 interface ContactInputProps {
   label: string;
@@ -102,7 +102,9 @@ function Security() {
 function Wallet() {
   return (
     <>
-      <p className='mt-6 mb-12 text-center font-semibold text-a-green'>Wallet</p>
+      <p className='mb-12 mt-6 text-center font-semibold text-a-green'>
+        Wallet
+      </p>
 
       <div>
         <ContactInput
@@ -122,6 +124,40 @@ function Wallet() {
   );
 }
 
+const PinCodeDigit = () => (
+  <div className='pin-code mx-1'>
+    <input
+      className='h-full w-full bg-transparent text-center text-lg font-semibold'
+      size={1}
+    />
+  </div>
+);
+export function Footer() {
+  return (
+    <div className='mt-16 flex-wrap items-center pr-2 lg:flex lg:px-20'>
+      <span className='mr-4 text-sm font-semibold'>Security Pin:</span>
+      <div className='inline-flex flex-shrink-0'>
+        <PinCodeDigit />
+        <PinCodeDigit />
+        <PinCodeDigit />
+        <PinCodeDigit />
+      </div>
+      <div className='flex-grow' />
+      <div className='mt-5 w-52 flex-shrink-0 lg:mt-0'>
+        <Button
+          label='Save Changes'
+          className='py-3'
+          rightElement={
+            <div>
+              <img src={RightArrow} />
+            </div>
+          }
+        />
+      </div>
+    </div>
+  );
+}
+
 export function Settings() {
   return (
     <>
@@ -135,6 +171,8 @@ export function Settings() {
           <ContactDetails />
           <Security />
           <Wallet />
+
+          <Footer />
         </div>
       </Contents>
     </>

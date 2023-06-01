@@ -14,7 +14,7 @@ export const Button = (props: ButtonProps) => {
     <button
       {...rest}
       className={cx(
-        "flex w-full rounded-2.5xl bg-a-green p-4 hover:bg-a-green/80",
+        "flex w-full rounded-2.5xl transition-colors bg-a-green p-4 hover:bg-a-green/80",
         className
       )}
     >
