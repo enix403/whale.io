@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .circle-bullet {
+    list-style-image: url("/list-bullet.png");
+    @apply [&>li]:pl-2;
+    @apply last:[&>li]:mb-0;
+  }
+}
+
 @layer utilities {
   .box-center {
     @apply flex;
@@ -19,8 +27,8 @@
 :root {
   color-scheme: light dark;
   /* color: rgba(255, 255, 255, 0.87); */
-  color: #FFFFFF;
-  background-color: #161E28;
+  color: #ffffff;
+  background-color: #161e28;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -33,7 +41,11 @@ input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-    outline: none;
+  outline: none;
+}
+
+select {
+  appearance: none;
 }
 
 #root {

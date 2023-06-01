@@ -1,0 +1,12 @@
+@tailwind components;
+
+@layer components {
+  .network-selector {
+    @apply mt-10 flex cursor-pointer items-stretch rounded-2.5xl border border-a-white-100/30 p-1.5;
+  }
+  .network-selector > div {
+    @apply mr-1 flex flex-1 items-center justify-center rounded-1.5xl px-4 py-4 text-xs text-a-white-200 transition-colors;
+
+    @apply [&.active]:bg-[#212A36]
+  }
+}

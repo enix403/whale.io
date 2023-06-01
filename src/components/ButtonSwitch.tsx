@@ -20,7 +20,7 @@ export function ButtonSwitch(props: ButtonSwitchProps) {
   );
 
   return (
-    <div className='inline-flex h-full w-full cursor-pointer items-stretch rounded-2.5xl p-1'>
+    <div className='inline-flex h-full w-full cursor-pointer items-stretch p-1'>
       <div
         className={cx(
           "box-center mr-1 flex-1 rounded-1.5xl px-4 py-2 transition-all",

@@ -1,8 +1,8 @@
 import { Contents, Sidebar } from "components/Sidebar";
 
+import CopyIcon from "assets/CopyIcon.svg";
 import { Button } from "components/Button";
 import "./Affiliate.css";
-import CopyIcon from "./CopyIcon.svg";
 import HandShake from "./HandShake.svg";
 import Sectionbanner from "./Sectionbanner.png";
 

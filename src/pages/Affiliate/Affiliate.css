@@ -1,9 +1,0 @@
-@tailwind components;
-
-@layer components {
-  .circle-bullet {
-    list-style-image: url("/list-bullet.png");
-    @apply [&>li]:pl-2;
-    @apply last:[&>li]:mb-0;
-  }
-}
