@@ -72,5 +72,5 @@ export function Sidebar() {
 
 export function Contents(props: React.HTMLProps<HTMLDivElement>) {
   const { className, ...rest } = props;
-  return <div {...rest} className={classNames("pl-64 w-full", className)} />;
+  return <div {...rest} className={classNames("pl-64 pb-8 w-full", className)} />;
 }

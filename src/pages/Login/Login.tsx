@@ -1,11 +1,6 @@
-import QrCpde from "./Qrcode.svg";
-import Lock from "./lock.svg";
-import vecBlocks from "./vector-blocks.png";
-import RightArrow from "/btn-right-arrow.svg";
-import whaleLogo from "/whale-logo.png";
-
 import { Button } from "components/Button";
 import { ButtonSwitch } from "components/ButtonSwitch";
+import { InputGroup } from "components/InputGroup";
 import {
   AtRate,
   Check,
@@ -15,6 +10,12 @@ import {
   Password,
   RefCode
 } from "./icons";
+
+import QrCpde from "./Qrcode.svg";
+import Lock from "./lock.svg";
+import vecBlocks from "./vector-blocks.png";
+import RightArrow from "/btn-right-arrow.svg";
+import whaleLogo from "/whale-logo.png";
 
 function Navbar() {
   return (
@@ -31,32 +32,6 @@ function Navbar() {
       </div>
       <div className='flex-1'></div>
       <div className='rounded-xl bg-a-dark-200 px-4 py-3'>English</div>
-    </div>
-  );
-}
-
-interface InputProps {
-  placeholder: string;
-  leftIcon: JSX.Element;
-  rightIcon?: JSX.Element;
-  inputProps?: React.HTMLProps<HTMLInputElement>;
-}
-function Input(props: InputProps) {
-  return (
-    <div className='mb-6 flex h-16 rounded-2.5xl bg-a-dark-200'>
-      <p className='box-center mx-4 self-stretch'>{props.leftIcon}</p>
-      <div className='my-6 mr-5 border border-a-white-100/50'></div>
-      <input
-        className='h-full flex-1 bg-transparent'
-        placeholder={props.placeholder}
-        size={1}
-        {...props.inputProps}
-      />
-      {props.rightIcon && (
-        <>
-          <p className='box-center mr-5 self-stretch'>{props.rightIcon}</p>
-        </>
-      )}
     </div>
   );
 }
@@ -82,17 +57,27 @@ function LoginPane() {
           <ButtonSwitch active='left' left='Login' right='SignUp' />
         </div>
 
-        <Input
-          rightIcon={Check}
+        <InputGroup
+          containerClass='mb-6 bg-a-dark-200'
+          rightElement={
+            <>
+              <p className='box-center mr-5 self-stretch'>{Check}</p>
+            </>
+          }
           leftIcon={AtRate}
           placeholder='Email Address'
         />
-        <Input
+        <InputGroup
+          containerClass='mb-6 bg-a-dark-200'
           leftIcon={Password}
           placeholder='Password'
           inputProps={{ type: "password" }}
         />
-        <Input leftIcon={RefCode} placeholder='Referral Code (Optional)' />
+        <InputGroup
+          containerClass='mb-6 bg-a-dark-200'
+          leftIcon={RefCode}
+          placeholder='Referral Code (Optional)'
+        />
 
         <Button
           label='Continue'

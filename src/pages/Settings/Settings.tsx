@@ -1,6 +1,7 @@
 import { Button } from "components/Button";
 import { ButtonSwitch } from "components/ButtonSwitch";
 import { QuestionMarkHeader } from "components/QuestionMarkHeader";
+import { SecurityPinDots } from "components/SecurityPinDots";
 import { Contents, Sidebar } from "components/Sidebar";
 import React from "react";
 import "./Settings.css";
@@ -124,24 +125,21 @@ function Wallet() {
   );
 }
 
+/*
 const PinCodeDigit = () => (
   <div className='pin-code mx-1'>
-    <input
-      className='h-full w-full bg-transparent text-center text-lg font-semibold'
-      size={1}
-    />
+  <input
+  className='h-full w-full bg-transparent text-center text-lg font-semibold'
+  size={1}
+  />
   </div>
-);
+  );
+  */
 export function Footer() {
   return (
     <div className='mt-16 flex-wrap items-center pr-2 lg:flex lg:px-20'>
       <span className='mr-4 text-sm font-semibold'>Security Pin:</span>
-      <div className='inline-flex flex-shrink-0'>
-        <PinCodeDigit />
-        <PinCodeDigit />
-        <PinCodeDigit />
-        <PinCodeDigit />
-      </div>
+      <SecurityPinDots dotsCount={4} className='flex-shrink-0' />
       <div className='flex-grow' />
       <div className='mt-5 w-52 flex-shrink-0 lg:mt-0'>
         <Button

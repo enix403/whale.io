@@ -5,6 +5,23 @@ import CopyIcon from "assets/CopyIcon.svg";
 import WarningCircle from "assets/WarningCircle.svg";
 import QrCode from "./Qrcode.svg";
 
+const SelectDownArrow = () => (
+  <svg
+    width='44'
+    height='44'
+    viewBox='0 0 44 44'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      fillRule='evenodd'
+      clipRule='evenodd'
+      d='M22 23.5858L26.2929 19.2929C26.6834 18.9024 27.3166 18.9024 27.7071 19.2929C28.0976 19.6834 28.0976 20.3166 27.7071 20.7071L22.7071 25.7071C22.3166 26.0976 21.6834 26.0976 21.2929 25.7071L16.2929 20.7071C15.9024 20.3166 15.9024 19.6834 16.2929 19.2929C16.6834 18.9024 17.3166 18.9024 17.7071 19.2929L22 23.5858Z'
+      fill='white'
+    />
+  </svg>
+);
+
 const WarningLine = () => (
   <svg
     width='24'
@@ -53,14 +70,27 @@ function CoinPreview() {
 
 export function CoinViewBox(props: React.PropsWithChildren) {
   return (
-    <div className='group relative box-content flex h-12 w-full items-stretch rounded-4xl bg-a-dark-300 p-3 py-2'>
+    <div className='group relative box-content flex h-12 w-full items-stretch rounded-4xl bg-a-dark-300 px-3 py-2'>
       <CoinPreview />
       {props.children}
     </div>
   );
 }
 
-export const Tips = () => (
+export function CoinSelect() {
+  return (
+    <CoinViewBox>
+      <select className='flex-1 bg-transparent text-sm text-a-white-200'>
+        <option>BTC</option>
+      </select>
+      <div className='box-center pointer-events-none absolute right-2 aspect-square self-center rounded-2xl bg-a-dark-200 transition-colors group-hover:bg-a-green'>
+        <SelectDownArrow />
+      </div>
+    </CoinViewBox>
+  );
+}
+
+export const TipsDeposit = () => (
   <div className='mt-4 w-full rounded-4xl bg-a-dark-300 px-12 py-10'>
     <ul className='circle-bullet text-a-white-200/80 [&>li]:mb-6'>
       <li>

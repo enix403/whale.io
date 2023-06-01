@@ -6,7 +6,7 @@ import {
   CoinViewBox,
   CopyButton,
   NetworkPane,
-  Tips
+  TipsDeposit
 } from "./common.tsx";
 
 const RefreshIcon = () => (
@@ -41,10 +41,10 @@ const RefreshIcon = () => (
   </svg>
 );
 
-function CoinSelect() {
+function CoinTransfer() {
   return (
     <CoinViewBox>
-      <p className='box-center ml-0 flex-col lg:ml-16 lg:flex-row'>
+      <p className='box-center mr-4 ml-0 flex-col lg:ml-16 lg:flex-row'>
         <span className='mx-2 text-a-white-200/80'>Transfer:</span>
         0.02347 BTC
       </p>
@@ -67,7 +67,7 @@ function DepositPane() {
 
       <div className='mb-16 mt-10 pr-10'>
         <p className='my-2 ml-6 text-sm text-a-white-200'>Coin:</p>
-        <CoinSelect />
+        <CoinTransfer />
       </div>
 
       <BTCAddressInput />
@@ -77,7 +77,7 @@ function DepositPane() {
       </div>
 
       <p className='mx-8 mt-16 font-semibold text-white'>Tips</p>
-      <Tips />
+      <TipsDeposit />
     </>
   );
 }

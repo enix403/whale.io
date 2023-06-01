@@ -1,9 +1,9 @@
 import { Contents, Sidebar } from "components/Sidebar";
 
 import CopyIcon from "assets/CopyIcon.svg";
+import HandShake from "assets/HandShake.svg";
 import { Button } from "components/Button";
 import "./Affiliate.css";
-import HandShake from "./HandShake.svg";
 import Sectionbanner from "./Sectionbanner.png";
 
 import { QuestionMarkHeader } from "components/QuestionMarkHeader";
