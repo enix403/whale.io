@@ -4,6 +4,7 @@
 
 import { AffiliatePage } from './pages/Affiliate/Affiliate';
 import { Deposit } from './pages/Deposit/Deposit';
+import { Deposit1Page } from './pages/Deposit/Deposit1';
 import { Deposit2 } from './pages/Deposit/Deposit2';
 import { WithdrawPage } from './pages/Deposit/Withdraw';
 import { LoginPage } from './pages/Login/Login';
@@ -19,7 +20,8 @@ export function App() {
       {/* <Settings /> */}
       {/* <Deposit /> */}
       {/* <Deposit2 /> */}
-      <WithdrawPage />
+      {/* <WithdrawPage /> */}
+      <Deposit1Page />
     </>
   );
 }
