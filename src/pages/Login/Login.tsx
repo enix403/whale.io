@@ -3,6 +3,7 @@ import Lock from "./lock.svg";
 import vecBlocks from "./vector-blocks.png";
 import whaleLogo from "/whale-logo.png";
 
+import { ButtonSwitch } from "components/ButtonSwitch";
 import {
   ArrowRight,
   AtRate,
@@ -76,13 +77,8 @@ function LoginPane() {
       </p>
 
       <div className='mx-2'>
-        <div className='mb-10 flex h-14 w-52 cursor-pointer items-stretch rounded-2.5xl bg-a-dark-200 px-3 py-2'>
-          <div className='box-center mx-1 flex-1 rounded-1.5xl bg-a-green px-3 py-3'>
-            Login
-          </div>
-          <div className='box-center mx-1 flex-1 rounded-1.5xl px-3 py-3 transition-all hover:bg-a-green/10'>
-            SignUp
-          </div>
+        <div className='mb-10 inline-block rounded-2.5xl bg-a-dark-200 px-2 py-1'>
+          <ButtonSwitch active='left' left='Login' right='SignUp' />
         </div>
 
         <Input

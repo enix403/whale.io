@@ -13,6 +13,10 @@
     @apply font-normal;
     @apply text-xs;
   }
+  .history-table th,
+  .history-table td {
+    @apply whitespace-nowrap;
+  }
 
   .history-table td:first-child,
   .history-table th:first-child {

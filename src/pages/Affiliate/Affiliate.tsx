@@ -6,6 +6,8 @@ import CopyIcon from "./CopyIcon.svg";
 import HandShake from "./HandShake.svg";
 import Sectionbanner from "./Sectionbanner.png";
 
+import { QuestionMarkHeader } from "components/QuestionMarkHeader";
+
 function AffiliateStats() {
   return (
     <>
@@ -89,10 +91,10 @@ function Community() {
         <Button label='Create Community' className='sm:py-3' />
       </div>
 
-      <p className='ml-5 mt-10 mb-5 font-medium text-a-green/80'>
+      <p className='mb-5 ml-5 mt-10 font-medium text-a-green/80'>
         Affiliate Mechanism
       </p>
-      <ul className='ml-3 circle-bullet [&>li]:mb-1 text-a-dgreen/50'>
+      <ul className='circle-bullet ml-3 text-a-dgreen/50 [&>li]:mb-1'>
         <li>Individual: 5-3-1%</li>
         <li>Community: 3% Cashback</li>
         <li>2.5%/community pool</li>
@@ -129,8 +131,10 @@ function DashboardAlert() {
           will be temporarily unavailable for witdrawals.
         </li>
         <li>
-          You could check the blockchain records and deposit status at{' '}
-          <a href="#" className="text-a-green">Deposit Records.</a>
+          You could check the blockchain records and deposit status at{" "}
+          <a href='#' className='text-a-green'>
+            Deposit Records.
+          </a>
         </li>
       </ul>
     </div>
@@ -154,9 +158,9 @@ export function AffiliatePage() {
         <div className='px-12 py-20'>
           <div className='xl:flex'>
             <div className='flex-1 xl:px-12'>
-              <p className='mb-10 font-semibold'>
-                Affiliate and Bonus Dashboard
-              </p>
+              <div className='mb-10'>
+                <QuestionMarkHeader label='Affiliate and Bonus Dashboard' />
+              </div>
               <Dashboard />
               <DashboardAlert />
             </div>

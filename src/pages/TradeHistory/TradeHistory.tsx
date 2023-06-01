@@ -51,7 +51,7 @@ function Selections() {
 
 function HistoryTableRow() {
   return (
-    <tr className='[&>td]:py-3 [&>td]:first:pt-8'>
+    <tr className='[&>td]:py-3 [&>td]:pr-3 [&>td]:first:pt-8'>
       <td>
         <img src={CoinBTC} />
       </td>
@@ -60,9 +60,9 @@ function HistoryTableRow() {
         <p className='text-sm text-a-white-200/80'>0.15654 BTC</p>
       </td>
       <td>
-        <button className='group inline-flex items-center'>
+        <button className='group h-full flex items-center'>
           <img src={TypeArrowUp} />
-          <span className='ml-2 text-a-red group-hover:text-a-red/60'>
+          <span className='ml-2 mr-6 text-a-red group-hover:text-a-red/60'>
             Withdraw
           </span>
         </button>
@@ -85,7 +85,7 @@ function HistoryTable() {
     <div className='w-full max-w-full overflow-auto'>
       <table className='history-table'>
         <thead>
-          <tr className='border-b border-a-white-100/30 text-a-white-900/80 [&>th]:pb-4'>
+          <tr className='border-b border-a-white-100/30 text-a-white-900/80 [&>th]:pb-4 [&>th]:pr-3'>
             <th>Coin</th>
             <th>Transaction</th>
             <th>Type</th>
