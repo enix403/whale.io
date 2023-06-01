@@ -3,6 +3,7 @@
 // @ts-nocheck
 
 import { AffiliatePage } from './pages/Affiliate/Affiliate';
+import { DashboardPage } from './pages/Dashboard/Dashboard';
 import { Deposit } from './pages/Deposit/Deposit';
 import { Deposit1Page } from './pages/Deposit/Deposit1';
 import { Deposit2 } from './pages/Deposit/Deposit2';
@@ -21,7 +22,8 @@ export function App() {
       {/* <Deposit /> */}
       {/* <Deposit2 /> */}
       {/* <WithdrawPage /> */}
-      <Deposit1Page />
+      {/* <Deposit1Page /> */}
+      <DashboardPage />
     </>
   );
 }
