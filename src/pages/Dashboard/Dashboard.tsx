@@ -3,11 +3,13 @@ import { Button } from "components/Button";
 import { Exchange, ExchangeCircle, ExchangeSide } from "components/Exchange";
 import { Contents, Sidebar } from "components/Sidebar";
 import { SortArrow } from "components/SortArrow";
-import { MainChart } from "./chart";
+import { MainChart, SubChart } from "./chart";
 
 import CoinBTC from "assets/CoinBTC.svg";
+import CoinBTCBlue from "assets/CoinBTCBlue.svg";
 import CoinTRX from "assets/CoinTRX.svg";
 import CoinUSDT from "assets/CoinUSDT.svg";
+import CoinUniSwap from "assets/CoinUniSwap.png";
 import SwapIconH from "assets/SwapIconH.svg";
 import HistoryIcon from "./HistoryIcon.svg";
 import SettingsIcon from "./SettingsIcon.svg";
@@ -253,24 +255,33 @@ function DurationSelect() {
   );
 }
 
-function MarketPriceBox() {
+interface MarketPriceBoxProps {
+  iconUrl: string;
+  iconBorder: string;
+  label: string;
+  chartColor: string;
+}
+function MarketPriceBox(props: MarketPriceBoxProps) {
   return (
     <div className='mb-6 last:pr-0 lg:w-1/4 lg:pr-16'>
       <div className='flex items-start'>
-        <div className='price-logo-btc rounded-full p-0.5'>
+        <div className={cx('rounded-full p-0.5', `price-logo-${props.iconBorder}`)}>
           <img
             className='min-h-[32px] min-w-[32px] rounded-full border-8 border-a-dark-100'
-            src={CoinBTC}
+            src={props.iconUrl}
           />
         </div>
         <div className='mx-3'>
-          <p className='font-semibold'>Bitcoin</p>
+          <p className='font-semibold'>{props.label}</p>
           <p className='text-xs text-a-white-200/80'>BTC</p>
         </div>
 
         <div className='flex-1' />
         <DurationSelect />
       </div>
+
+      <SubChart color={props.chartColor} />
+
     </div>
   );
 }
@@ -281,10 +292,10 @@ function MarketPrices() {
       <p className='mb-12 font-semibold text-white'>Market Prices</p>
 
       <div className='lg:flex'>
-        <MarketPriceBox />
-        <MarketPriceBox />
-        <MarketPriceBox />
-        <MarketPriceBox />
+        <MarketPriceBox iconBorder="btc" iconUrl={CoinBTC} label="Bitcoin" chartColor="#0CAF60" />
+        <MarketPriceBox iconBorder="ustd" iconUrl={CoinUSDT} label="Theter" chartColor="#0CAF60" />
+        <MarketPriceBox iconBorder="uniswap" iconUrl={CoinUniSwap} label="UniSwap" chartColor="#FF5449" />
+        <MarketPriceBox iconBorder="btc-blue" iconUrl={CoinBTCBlue} label="Bitcoin" chartColor="#0CAF60" />
       </div>
     </>
   );

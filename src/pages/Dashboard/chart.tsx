@@ -9,150 +9,6 @@ import {
   YAxis
 } from "recharts";
 
-/*
-
-0.00571, -0.01595
-0.02001, 0.00372
-0.04003, 0.03126
-0.06359, 0.00717
-0.07226, 0.14993
-0.08096, 0.33633
-0.09378, 0.28459
-0.10664, 0.28047
-0.11664, 0.28432
-0.12810, 0.32386
-0.14455, 0.35541
-0.15385, 0.38308
-0.16243, 0.39488
-0.16670, 0.36705
-0.17165, 0.29954
-0.17377, 0.27173
-0.17733, 0.24788
-0.18808, 0.29934
-0.19812, 0.35874
-0.20810, 0.32291
-0.21735, 0.27518
-0.22302, 0.21559
-0.22872, 0.19568
-0.23514, 0.18370
-0.24373, 0.21534
-0.25014, 0.17955
-0.25679, 0.50090
-0.26203, 0.82624
-0.27701, 0.80225
-0.28635, 0.87357
-0.29987, 0.80991
-0.31421, 0.87720
-0.32275, 0.83742
-0.33707, 0.88487
-0.34776, 0.84903
-0.36066, 0.91633
-0.36778, 0.88053
-0.38278, 0.88036
-0.39132, 0.83660
-0.39557, 0.79290
-0.39838, 0.71350
-0.41048, 0.66177
-0.41258, 0.59429
-0.42542, 0.57032
-0.43038, 0.52661
-0.43826, 0.55430
-0.45400, 0.59379
-0.46612, 0.56190
-0.48182, 0.54187
-0.48894, 0.51004
-0.51183, 0.55342
-0.52754, 0.54927
-0.53965, 0.49754
-0.56107, 0.48538
-0.56756, 0.56863
-0.57973, 0.60817
-0.59542, 0.57227
-0.59687, 0.60003
-0.60394, 0.50471
-0.61325, 0.54428
-0.62253, 0.53226
-0.62827, 0.57188
-0.63683, 0.54400
-0.64754, 0.54784
-0.65896, 0.52786
-0.67541, 0.56338
-0.68971, 0.58305
-0.69611, 0.53932
-0.70900, 0.58679
-0.72041, 0.56681
-0.73114, 0.58653
-0.73897, 0.55072
-0.74755, 0.55458
-0.76108, 0.50284
-0.77001, 0.00670
-0.78292, 0.07797
-0.80506, 0.06977
-0.81410, 0.73236
-0.82693, 0.68856
-0.83982, 0.73999
-0.85122, 0.69621
-0.86270, 0.76353
-0.88409, 0.71566
-0.90127, 0.76307
-0.91848, 0.85414
-0.93060, 0.82621
-0.93777, 0.86581
-0.95770, 0.76637
-0.97057, 0.79002
-0.98205, 0.85338
-0.99133, 0.85327
-1.00572, 0.99199
-
-*/
-
-/*
-const mainData = [
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400
-  },
-  {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210
-  },
-  {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290
-  },
-  {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000
-  },
-  {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181
-  },
-  {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500
-  },
-  {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100
-  }
-];
-*/
-
 const mainData = [
   { value: 0.51595 },
   { value: 0.50372 },
@@ -248,6 +104,68 @@ const mainData = [
   { value: 1.49199 }
 ];
 
+const subData = [
+  { value: 0.02511 },
+  { value: 0.00472 },
+  { value: 0.02814 },
+  { value: 0.01838 },
+  { value: 0.06111 },
+  { value: 0.06111 },
+  { value: 0.02886 },
+  { value: 0.14963 },
+  { value: 0.11976 },
+  { value: 0.31081 },
+  { value: 0.28094 },
+  { value: 0.32372 },
+  { value: 0.23109 },
+  { value: 0.26644 },
+  { value: 0.30665 },
+  { value: 0.33463 },
+  { value: 0.63544 },
+  { value: 0.67327 },
+  { value: 0.90142 },
+  { value: 1.01422 },
+  { value: 0.67601 },
+  { value: 0.85397 },
+  { value: 0.66628 },
+  { value: 0.6137 },
+  { value: 0.60656 },
+  { value: 0.5416 },
+  { value: 0.52192 },
+  { value: 0.4671 },
+  { value: 0.4671 },
+  { value: 0.47997 },
+  { value: 0.34742 },
+  { value: 0.3652 },
+  { value: 0.30029 },
+  { value: 0.39842 },
+  { value: 0.38365 },
+  { value: 0.43162 },
+  { value: 0.3415 },
+  { value: 0.31426 },
+  { value: 0.26926 },
+  { value: 0.27195 },
+  { value: 0.24447 },
+  { value: 0.41023 },
+  { value: 0.26519 },
+  { value: 0.26033 },
+  { value: 0.12528 },
+  { value: 0.13557 },
+  { value: 0.08814 },
+  { value: 0.174 },
+  { value: 0.34966 },
+  { value: 0.38985 },
+  { value: 0.42002 },
+  { value: 0.42258 },
+  { value: 0.43524 },
+  { value: 0.43038 },
+  { value: 0.41801 },
+  { value: 0.39557 },
+  { value: 0.36814 },
+  { value: 0.3432 },
+  { value: 0.3559 }
+];
+
 export const MainChart = () => {
   return (
     <ResponsiveContainer width='100%' height={350}>
@@ -272,7 +190,7 @@ export const MainChart = () => {
             <stop offset='5%' stopColor='#0CAF60' stopOpacity={0.4} />
             <stop offset='45%' stopColor='#0CAF60' stopOpacity={0.09} />
             <stop offset='75%' stopColor='#0CAF60' stopOpacity={0.02} />
-            <stop offset='85%' stopColor='#0CAF60' stopOpacity={0.00} />
+            <stop offset='85%' stopColor='#0CAF60' stopOpacity={0.0} />
           </linearGradient>
         </defs>
 
@@ -288,7 +206,6 @@ export const MainChart = () => {
     </ResponsiveContainer>
   );
 };
-
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -317,3 +234,40 @@ function AppTooltip({ active, payload }: TooltipProps<any, any>) {
   }
   return null;
 }
+
+interface SubChartProps {
+  color: string;
+}
+export const SubChart = ({color}: SubChartProps) => {
+  return (
+    <ResponsiveContainer width='100%' height={72}>
+      <AreaChart
+        width={730}
+        height={250}
+        data={subData}
+        margin={{
+          top: 0,
+          bottom: 0,
+          right: 0,
+          left: 0
+        }}
+      >
+        <defs>
+          <linearGradient id={'subFill-' + color} gradientTransform='rotate(90)'>
+            <stop offset='5%' stopColor={color} stopOpacity={0.4} />
+            <stop offset='90%' stopColor={color} stopOpacity={0.01} />
+          </linearGradient>
+        </defs>
+
+        <Area
+          type='monotone'
+          dataKey='value'
+          stroke={color}
+          strokeWidth={3}
+          fill={`url(#subFill-${color})`}
+          fillOpacity={1}
+        />
+      </AreaChart>
+    </ResponsiveContainer>
+  );
+};
