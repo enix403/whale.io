@@ -34,7 +34,8 @@ function DepositPane() {
 
 export function Deposit() {
   return (
-    <>
+    <div className="group/layout">
+
       <Sidebar />
       <Contents>
         <div className='p-8 xl:flex'>
@@ -46,6 +47,6 @@ export function Deposit() {
           </div>
         </div>
       </Contents>
-    </>
+    </div>
   );
 }

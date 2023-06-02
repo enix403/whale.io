@@ -113,7 +113,7 @@ function PricePane() {
 
 export function Deposit1Page() {
   return (
-    <>
+    <div className="group/layout full">
       <Sidebar />
       <Contents>
         <div className='p-8 xl:flex'>
@@ -125,6 +125,6 @@ export function Deposit1Page() {
           </div>
         </div>
       </Contents>
-    </>
+    </div>
   );
 }

@@ -22,8 +22,8 @@ export function App() {
       {/* <Deposit /> */}
       {/* <Deposit2 /> */}
       {/* <WithdrawPage /> */}
-      {/* <Deposit1Page /> */}
-      <DashboardPage />
+      <Deposit1Page />
+      {/* <DashboardPage /> */}
     </>
   );
 }

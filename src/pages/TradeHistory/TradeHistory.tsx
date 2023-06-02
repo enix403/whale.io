@@ -105,7 +105,7 @@ function HistoryTable() {
 
 export function TradeHistory() {
   return (
-    <>
+    <div className="group/layout">
       <Sidebar />
       <Contents>
         <div className='p-8'>
@@ -113,6 +113,6 @@ export function TradeHistory() {
           <HistoryTable />
         </div>
       </Contents>
-    </>
+    </div>
   );
 }

@@ -137,7 +137,7 @@ function Banner() {
 
 export function WithdrawPage() {
   return (
-    <>
+    <div className="group/layout">
       <Sidebar />
       <Contents>
         <div className='p-8 pb-0 xl:flex'>
@@ -149,6 +149,6 @@ export function WithdrawPage() {
           </div>
         </div>
       </Contents>
-    </>
+    </div>
   );
 }

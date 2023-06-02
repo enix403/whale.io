@@ -376,7 +376,7 @@ function BalancePane() {
 
 export function DashboardPage() {
   return (
-    <>
+    <div className="group/layout full">
       <Sidebar />
       <Contents>
         <div className='px-14 py-14 lg:flex'>
@@ -394,6 +394,6 @@ export function DashboardPage() {
           <MarketPrices />
         </div>
       </Contents>
-    </>
+    </div>
   );
 }

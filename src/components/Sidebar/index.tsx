@@ -2,9 +2,12 @@ import classNames from "classnames";
 import { Button } from "components/Button";
 import { TopBar } from "components/TopBar/TopBar";
 
+import { ButtonSwitch } from "components/ButtonSwitch";
 import Avatar from "./Avatar-Image.png";
 import ChatIcon from "./Chat-Icon-nav.svg";
+import DarkIcon from "./Dark-Icon.svg";
 import ExchangeIcon from "./Exchange-Icon-nav.svg";
+import LightIcon from "./Light-Icon.svg";
 import MarketIcon from "./Market-Icon-nav.svg";
 import NewsIcon from "./News-Icon-nav.svg";
 import PriceIcon from "./Price-Icon-nav.svg";
@@ -20,7 +23,7 @@ interface SidebarLinkProps {
 }
 function SidebarLink(props: SidebarLinkProps) {
   return (
-    <div className='group mt-6 flex cursor-pointer first:mt-0'>
+    <div className='group mt-4 flex cursor-pointer first:mt-0'>
       <img src={props.iconUrl} className='mr-4 h-6 w-6' />
       <span className='text-a-white-300 transition-all group-hover:text-white'>
         {props.name}
@@ -33,8 +36,8 @@ export function Sidebar() {
   return (
     <>
       <TopBar />
-      <div className='fixed z-20 left-0 top-0 flex min-h-full w-64 flex-col bg-a-dark-300'>
-        <div className='box-center relative bottom-2 border-b-2 border-a-white-100/10 py-8'>
+      <div className='fixed left-0 top-0 z-20 flex max-h-full w-64 flex-col bg-a-dark-300 group-[.full]/layout:pt-24'>
+        <div className='box-center relative bottom-2 border-b-2 border-a-white-100/10 py-8 group-[.full]/layout:mt-2 group-[.full]/layout:border-t-2'>
           <img src={WhaleLogo} />
         </div>
 
@@ -54,7 +57,7 @@ export function Sidebar() {
           <Button label='Dashboard' />
         </div>
 
-        <div className='mt-10 px-9'>
+        <div className='mt-6 px-9'>
           <SidebarLink iconUrl={ExchangeIcon} name='Exchange' />
           <SidebarLink iconUrl={PriceIcon} name='Live Prices' />
           <SidebarLink iconUrl={WalletIcon} name='Wallet' />
@@ -65,9 +68,27 @@ export function Sidebar() {
         </div>
 
         <div className='flex-1'></div>
-        <div className='mb-8 px-9'>
+        <div className='mb-8 mt-4 px-9'>
           <p className='text-sm text-a-white-200'>Insights</p>
           <SidebarLink iconUrl={ChatIcon} name='Inbox' />
+
+          <div className='mb-10 mt-2 inline-block rounded-2.5xl bg-a-dark-200 px-1 py-0.5'>
+            <ButtonSwitch
+              active='right'
+              left={
+                <>
+                  <img src={LightIcon} />
+                  <span className='ml-2'>Light</span>
+                </>
+              }
+              right={
+                <>
+                  <img src={DarkIcon} />
+                  <span className='ml-2'>Dark</span>
+                </>
+              }
+            />
+          </div>
         </div>
       </div>
     </>
@@ -77,6 +98,9 @@ export function Sidebar() {
 export function Contents(props: React.HTMLProps<HTMLDivElement>) {
   const { className, ...rest } = props;
   return (
-    <div {...rest} className={classNames("w-full pb-8 pl-64 pt-24", className)} />
+    <div
+      {...rest}
+      className={classNames("w-full pb-8 pl-64 pt-24", className)}
+    />
   );
 }

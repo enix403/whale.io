@@ -45,7 +45,7 @@ const IconButton = ({ children }: React.PropsWithChildren) => (
 
 const TopBarContents = () => {
   return (
-    <div className='h-full pl-64'>
+    <div className='h-full pl-64 group-[.full]/layout:pl-0'>
       <div className='flex h-full items-center border-l-2 border-a-white-100/10 bg-a-dark-300 px-6'>
         <img className='ml-8' src={VecBlocks} />
         <SearchInput />
@@ -70,7 +70,7 @@ const TopBarContents = () => {
 
 export const TopBar = () => {
   return (
-    <div className='fixed z-10 h-24 w-full'>
+    <div className='fixed z-10 group-[.full]/layout:z-30 h-24 w-full'>
       <TopBarContents />
     </div>
   );

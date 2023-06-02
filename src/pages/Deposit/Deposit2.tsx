@@ -84,7 +84,7 @@ function DepositPane() {
 
 export function Deposit2() {
   return (
-    <>
+    <div className="group/layout">
       <Sidebar />
       <Contents>
         <div className='p-8 xl:flex'>
@@ -96,6 +96,6 @@ export function Deposit2() {
           </div>
         </div>
       </Contents>
-    </>
+    </div>
   );
 }

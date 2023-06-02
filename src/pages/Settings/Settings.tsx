@@ -158,7 +158,8 @@ export function Footer() {
 
 export function Settings() {
   return (
-    <>
+    <div className="group/layout full">
+
       <Sidebar />
       <Contents>
         <div className='p-8'>
@@ -173,6 +174,6 @@ export function Settings() {
           <Footer />
         </div>
       </Contents>
-    </>
+    </div>
   );
 }
