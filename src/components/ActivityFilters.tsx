@@ -21,7 +21,7 @@ export function ActivityFilters() {
           <img src={SearchIcon} />
         </div>
         <input
-          className='ml-5 h-full flex-1 bg-transparent'
+          className='ml-5 self-center h-full flex-1 bg-transparent'
           placeholder='Search'
           size={1}
         />

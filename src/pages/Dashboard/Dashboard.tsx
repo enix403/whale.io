@@ -15,8 +15,15 @@ import SwapIconH from "assets/SwapIconH.svg";
 import MArrowLeft from "./ArrowLeft.svg";
 import MArrowRight from "./ArrowRight.svg";
 import HistoryIcon from "./HistoryIcon.svg";
+import SeeAllArrow from "./SeeAllArrow.svg";
 import SettingsIcon from "./SettingsIcon.svg";
 import RightArrow from "/btn-right-arrow.svg";
+
+import Daigram1 from "./Diagram1.png";
+import Daigram2 from "./Diagram2.png";
+import Daigram3 from "./Diagram3.png";
+import Daigram4 from "./Diagram4.png";
+import DaigramM from "./DiagramM.png";
 
 import "./Dashboard.css";
 
@@ -301,11 +308,11 @@ function MarketPriceBox(props: MarketPriceBoxProps) {
 function MarketPrices() {
   return (
     <>
-      <div className="mb-12 flex items-center">
+      <div className='mb-12 flex items-center'>
         <p className='font-semibold text-white'>Market Prices</p>
-        <div className="flex-grow" />
-        <img className="cursor-pointer" src={MArrowLeft} />
-        <img className="cursor-pointer" src={MArrowRight} />
+        <div className='flex-grow' />
+        <img className='cursor-pointer' src={MArrowLeft} />
+        <img className='cursor-pointer' src={MArrowRight} />
       </div>
 
       <div className='lg:flex'>
@@ -400,12 +407,84 @@ function ExchangeBox() {
   );
 }
 
+function WheelChart() {
+  return (
+    <div>
+      <div className='box-center mb-6'>
+        <img src={DaigramM} />
+      </div>
+
+      <div className='flex'>
+        <div className='flex flex-1'>
+          <div className='box-center'>
+            <img className='w-14' src={Daigram1} />
+            <p className='absolute text-sm font-semibold text-a-white-200/80'>
+              35%
+            </p>
+          </div>
+          <div className='ml-4'>
+            <p className='text-a-white-200/80'>Bitcoin</p>
+            <p className='text-lg font-semibold'>$1920</p>
+          </div>
+        </div>
+
+        <div className='flex flex-1'>
+          <div className='box-center'>
+            <img className='w-14' src={Daigram2} />
+            <p className='absolute text-sm font-semibold text-a-white-200/80'>
+              5%
+            </p>
+          </div>
+          <div className='ml-4'>
+            <p className='text-a-white-200/80'>Waves</p>
+            <p className='text-lg font-semibold'>$250</p>
+          </div>
+        </div>
+      </div>
+
+      <div className='mb-4 mt-8 flex border-b border-a-white-100/80 pb-6'>
+        <div className='flex flex-1'>
+          <div className='box-center'>
+            <img className='w-14' src={Daigram3} />
+            <p className='absolute text-sm font-semibold text-a-white-200/80'>
+              50%
+            </p>
+          </div>
+          <div className='ml-4'>
+            <p className='text-a-white-200/80'>Avax</p>
+            <p className='text-lg font-semibold'>$26</p>
+          </div>
+        </div>
+
+        <div className='flex flex-1'>
+          <div className='box-center'>
+            <img className='w-14' src={Daigram4} />
+            <p className='absolute text-sm font-semibold text-a-white-200/80'>
+              10%
+            </p>
+          </div>
+          <div className='ml-4'>
+            <p className='text-a-white-200/80'>Bitcoin</p>
+            <p className='text-lg font-semibold'>$920</p>
+          </div>
+        </div>
+      </div>
+
+      <p className='box-center mb-12 cursor-pointer font-medium'>
+        <span className='mr-2'>See All</span>
+        <img src={SeeAllArrow} />
+      </p>
+    </div>
+  );
+}
+
 function BalancePane() {
   return (
     <>
       <h1 className='mb-10 flex items-center justify-between pr-10 text-lg font-bold'>
         <span className='ml-2'>Balance</span>
       </h1>
+      <WheelChart />
       <ExchangeBox />
     </>
   );
