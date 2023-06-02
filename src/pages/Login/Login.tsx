@@ -13,6 +13,7 @@ import {
 } from "./icons";
 
 import VecBlocks from "assets/vector-blocks.png";
+import { useNavigate } from "react-router-dom";
 import QrCpde from "./Qrcode.svg";
 import Lock from "./lock.svg";
 import RightArrow from "/btn-right-arrow.svg";
@@ -51,6 +52,9 @@ function ProviderLogin(props: React.PropsWithChildren) {
 }
 
 function LoginPane() {
+  const navigate = useNavigate();
+
+
   return (
     <div className='h-full flex-[1] rounded-app bg-a-dark-300 px-16 py-12'>
       <h1 className='text-3xl font-bold'>Welcome Back</h1>
@@ -92,6 +96,9 @@ function LoginPane() {
               <img src={RightArrow} />
             </div>
           }
+          onClick={() => {
+            navigate("/dashboard");
+          }}
         />
       </div>
 
@@ -145,7 +152,7 @@ function LoginBox() {
   );
 }
 
-export function LoginPage() {
+export function Login() {
   return (
     <>
       <Navbar />

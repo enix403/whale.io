@@ -3,6 +3,7 @@ import { Button } from "components/Button";
 import { ButtonSwitch } from "components/ButtonSwitch";
 import { TopBar } from "components/TopBar/TopBar";
 
+import { useNavigate } from "react-router-dom";
 import Avatar from "./Avatar-Image.png";
 import ChatIcon from "./Chat-Icon-nav.svg";
 import DarkIcon from "./Dark-Icon.svg";
@@ -21,10 +22,14 @@ import WhaleLogo from "/whale-logo.png";
 interface SidebarLinkProps {
   name: string;
   iconUrl: string;
+  href?: string;
 }
 function SidebarLink(props: React.PropsWithChildren<SidebarLinkProps>) {
+  const navigate = useNavigate();
   return (
-    <div className='group mt-2 flex cursor-pointer first:mt-0'>
+    <div className='group mt-2 flex cursor-pointer first:mt-0' onClick={() => {
+      props.href && navigate(props.href);
+    }}>
       <img src={props.iconUrl} className='mr-4 h-6 w-6' />
       <span className='text-sm text-a-white-300 transition-all group-hover:text-white'>
         {props.name}
@@ -35,6 +40,8 @@ function SidebarLink(props: React.PropsWithChildren<SidebarLinkProps>) {
 }
 
 export function Sidebar() {
+  const navigate = useNavigate();
+
   return (
     <>
       <TopBar />
@@ -60,6 +67,9 @@ export function Sidebar() {
               </div>
             }
             label='Dashboard'
+            onClick={() => {
+              navigate("/dashboard");
+            }}
           />
         </div>
 

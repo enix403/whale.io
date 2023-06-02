@@ -111,7 +111,7 @@ function PricePane() {
   );
 }
 
-export function Deposit1Page() {
+export function Deposit1() {
   return (
     <div className="group/layout">
       <Sidebar />

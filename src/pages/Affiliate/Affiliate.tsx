@@ -150,7 +150,7 @@ function Banner() {
   );
 }
 
-export function AffiliatePage() {
+export function Affiliate() {
   return (
     <div className="group/layout">
       <Sidebar />

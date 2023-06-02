@@ -118,7 +118,7 @@ function Banner() {
   );
 }
 
-export function WithdrawPage() {
+export function Withdraw() {
   return (
     <div className="group/layout">
       <Sidebar />

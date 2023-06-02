@@ -490,7 +490,7 @@ function BalancePane() {
   );
 }
 
-export function DashboardPage() {
+export function Dashboard() {
   return (
     <div className='group/layout'>
       <Sidebar />
