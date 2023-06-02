@@ -8,7 +8,34 @@
     @apply [&>li]:pl-2;
     @apply last:[&>li]:mb-0;
   }
+
+  .app-table {
+    @apply w-full;
+    @apply m-0;
+    @apply border-collapse;
+
+    @apply [&_td]:text-left;
+  }
+  .app-table th {
+    @apply text-left;
+    @apply font-normal;
+    @apply text-xs;
+  }
+  .app-table th,
+  .app-table td {
+    @apply whitespace-nowrap;
+  }
+
+  .app-table td:first-child,
+  .app-table th:first-child {
+    @apply pl-8;
+  }
+  .app-table td:last-child,
+  .app-table th:last-child {
+    @apply pr-8;
+  }
 }
+
 
 @layer utilities {
   .box-center {

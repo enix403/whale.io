@@ -1,10 +1,11 @@
 import { Contents, Sidebar } from "components/Sidebar";
-
-import "./TradeHistory.css";
+import { SortArrow } from "components/SortArrow";
 
 import CoinBTC from "./CoinBTC.svg";
 import TypeArrowDown from "./TypeArrowDown.svg";
 import TypeArrowUp from "./TypeArrowUp.svg";
+
+import "./TradeHistory.css";
 
 const SelectArrow = () => (
   <svg
@@ -83,17 +84,17 @@ function HistoryTableRow() {
 function HistoryTable() {
   return (
     <div className='w-full max-w-full overflow-auto'>
-      <table className='history-table'>
+      <table className='app-table'>
         <thead>
           <tr className='border-b border-a-white-100/30 text-a-white-900/80 [&>th]:pb-4 [&>th]:pr-3'>
-            <th>Coin</th>
-            <th>Transaction</th>
-            <th>Type</th>
-            <th>ID</th>
-            <th>Date/Time</th>
-            <th>IP</th>
-            <th>Status</th>
-            <th>Fees</th>
+            <th>Coin<SortArrow /></th>
+            <th>Transaction<SortArrow /></th>
+            <th>Type<SortArrow /></th>
+            <th>ID<SortArrow /></th>
+            <th>Date/Time<SortArrow /></th>
+            <th>IP<SortArrow /></th>
+            <th>Status<SortArrow /></th>
+            <th>Fees<SortArrow /></th>
           </tr>
         </thead>
         <tbody>
