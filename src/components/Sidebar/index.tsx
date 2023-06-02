@@ -74,17 +74,17 @@ export function Sidebar() {
         </div>
 
         <div className='mt-6 px-6'>
-          <SidebarLink iconUrl={ExchangeIcon} name='Exchange' />
-          <SidebarLink iconUrl={PriceIcon} name='Live Prices' />
-          <SidebarLink iconUrl={WalletIcon} name='Wallet' />
-          <SidebarLink iconUrl={MarketIcon} name='NFT Market'>
+          <SidebarLink iconUrl={ExchangeIcon} href="/affiliate" name='Affiliate' />
+          <SidebarLink iconUrl={PriceIcon} href="/trade" name='Trade History' />
+          <SidebarLink iconUrl={SettingsIcon} href="/settings" name='Settings' />
+          <SidebarLink iconUrl={WalletIcon} href="/dep" name='Deposite' />
+          <SidebarLink iconUrl={WalletIcon} href="/dep-1" name='Deposite 1' />
+          <SidebarLink iconUrl={MarketIcon} href="/dep-2" name='Deposite 2'>
             <span className='box-center relative -top-3 left-1 h-5 w-10 self-center rounded-md bg-red-500 text-center text-sm'>
               New
             </span>
           </SidebarLink>
-          <SidebarLink iconUrl={TransactionIcon} name='Transaction' />
-          <SidebarLink iconUrl={SettingsIcon} name='Settings' />
-          <SidebarLink iconUrl={NewsIcon} name='News' />
+          <SidebarLink iconUrl={TransactionIcon} href="/withdraw" name='Withdraw' />
         </div>
 
         <div className='flex-1'></div>
