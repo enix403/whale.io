@@ -6,6 +6,7 @@ import { Contents, Sidebar } from "components/Sidebar";
 import React from "react";
 
 import QrCodeScan from "./QR-Code-Scan.png";
+import USA from "./USA.png";
 import RightArrow from "/btn-right-arrow.svg";
 
 import "./Settings.css";
@@ -13,6 +14,7 @@ import "./Settings.css";
 interface ContactInputProps {
   label: string;
   inputProps?: React.HTMLProps<HTMLInputElement>;
+  leftElement?: React.ReactNode;
 }
 function ContactInput(props: ContactInputProps) {
   const { label, inputProps } = props;
@@ -22,7 +24,8 @@ function ContactInput(props: ContactInputProps) {
         <span className='text-sm font-semibold'>{label}:</span>
       </div>
       <div className='px-2 lg:flex-[3.5]'>
-        <div className='h-12 rounded-4xl bg-a-dark-300'>
+        <div className='relative h-12 rounded-4xl bg-a-dark-300'>
+          {props.leftElement}
           <input
             className='mx-3 h-full w-full bg-transparent text-center'
             size={1}
@@ -61,7 +64,18 @@ function ContactDetails() {
             inputProps={{ defaultValue: "Jdoe12" }}
             label='Username'
           />
-          <ContactInput inputProps={{ defaultValue: "USA" }} label='National' />
+          <ContactInput
+            inputProps={{ defaultValue: "USA" }}
+            leftElement={
+              <>
+                <img
+                  className='absolute left-5 top-[50%] -translate-y-1/2'
+                  src={USA}
+                />
+              </>
+            }
+            label='National'
+          />
           <ContactInput
             inputProps={{ defaultValue: "Jds****@gmail.com" }}
             label='Email'
@@ -150,16 +164,6 @@ function Wallet() {
   );
 }
 
-/*
-const PinCodeDigit = () => (
-  <div className='pin-code mx-1'>
-  <input
-  className='h-full w-full bg-transparent text-center text-lg font-semibold'
-  size={1}
-  />
-  </div>
-  );
-  */
 export function Footer() {
   return (
     <div className='mt-16 flex-wrap items-center pr-2 lg:flex lg:px-20'>
