@@ -12,6 +12,8 @@ import CoinTRX from "assets/CoinTRX.svg";
 import CoinUSDT from "assets/CoinUSDT.svg";
 import CoinUniSwap from "assets/CoinUniSwap.png";
 import SwapIconH from "assets/SwapIconH.svg";
+import MArrowLeft from "./ArrowLeft.svg";
+import MArrowRight from "./ArrowRight.svg";
 import HistoryIcon from "./HistoryIcon.svg";
 import SettingsIcon from "./SettingsIcon.svg";
 import RightArrow from "/btn-right-arrow.svg";
@@ -299,7 +301,12 @@ function MarketPriceBox(props: MarketPriceBoxProps) {
 function MarketPrices() {
   return (
     <>
-      <p className='mb-12 font-semibold text-white'>Market Prices</p>
+      <div className="mb-12 flex items-center">
+        <p className='font-semibold text-white'>Market Prices</p>
+        <div className="flex-grow" />
+        <img className="cursor-pointer" src={MArrowLeft} />
+        <img className="cursor-pointer" src={MArrowRight} />
+      </div>
 
       <div className='lg:flex'>
         <MarketPriceBox
@@ -413,7 +420,6 @@ export function DashboardPage() {
           <div className='flex-[3.2] lg:mr-16'>
             <TopStats />
             <ProfitChart />
-
             <ActivitiesTable />
           </div>
           <div className='flex-[1]'>

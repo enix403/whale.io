@@ -18,12 +18,12 @@ export function App() {
       {/* <LoginPage /> */}
       {/* <AffiliatePage /> */}
       {/* <TradeHistory /> */}
-      <Settings />
+      {/* <Settings /> */}
       {/* <Deposit /> */}
       {/* <Deposit2 /> */}
       {/* <WithdrawPage /> */}
       {/* <Deposit1Page /> */}
-      {/* <DashboardPage /> */}
+      <DashboardPage />
     </>
   );
 }
