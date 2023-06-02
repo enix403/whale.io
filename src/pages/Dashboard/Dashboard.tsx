@@ -13,12 +13,16 @@ import HistoryIcon from "./HistoryIcon.svg";
 import SettingsIcon from "./SettingsIcon.svg";
 import RightArrow from "/btn-right-arrow.svg";
 
-import './Dashboard.css';
+import "./Dashboard.css";
 
-const SelectDownArrow = () => (
+interface SelectDownArrowProps {
+  width?: any;
+  height?: any;
+}
+const SelectDownArrow = ({ width, height }: SelectDownArrowProps) => (
   <svg
-    width='44'
-    height='44'
+    width={width || "44"}
+    height={height || "44"}
     viewBox='0 0 44 44'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
@@ -236,11 +240,24 @@ function ActivitiesTable() {
   );
 }
 
+function DurationSelect() {
+  return (
+    <div className='relative h-8 w-16 rounded-lg border-2 border-a-white-100/30'>
+      <select className='h-full w-full appearance-none bg-transparent pl-3 text-sm'>
+        <option>24h</option>
+      </select>
+      <div className='pointer-events-none absolute right-[-2px] top-[-2px]'>
+        <SelectDownArrow width={"32"} height={"32"} />
+      </div>
+    </div>
+  );
+}
+
 function MarketPriceBox() {
   return (
-    <div className='mb-6 w-1/4 last:pr-0 lg:pr-16'>
+    <div className='mb-6 last:pr-0 lg:w-1/4 lg:pr-16'>
       <div className='flex items-start'>
-        <div className="p-0.5 rounded-full price-logo-btc">
+        <div className='price-logo-btc rounded-full p-0.5'>
           <img
             className='min-h-[32px] min-w-[32px] rounded-full border-8 border-a-dark-100'
             src={CoinBTC}
@@ -250,6 +267,9 @@ function MarketPriceBox() {
           <p className='font-semibold'>Bitcoin</p>
           <p className='text-xs text-a-white-200/80'>BTC</p>
         </div>
+
+        <div className='flex-1' />
+        <DurationSelect />
       </div>
     </div>
   );
@@ -258,9 +278,12 @@ function MarketPriceBox() {
 function MarketPrices() {
   return (
     <>
-      <p className='my-8 font-semibold text-white'>Market Prices</p>
+      <p className='mb-12 font-semibold text-white'>Market Prices</p>
 
       <div className='lg:flex'>
+        <MarketPriceBox />
+        <MarketPriceBox />
+        <MarketPriceBox />
         <MarketPriceBox />
       </div>
     </>
@@ -351,11 +374,13 @@ export function DashboardPage() {
             <ProfitChart />
 
             <ActivitiesTable />
-            <MarketPrices />
           </div>
           <div className='flex-[1]'>
             <BalancePane />
           </div>
+        </div>
+        <div className='px-14'>
+          <MarketPrices />
         </div>
       </Contents>
     </>
