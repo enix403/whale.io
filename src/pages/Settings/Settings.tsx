@@ -4,8 +4,11 @@ import { QuestionMarkHeader } from "components/QuestionMarkHeader";
 import { SecurityPinDots } from "components/SecurityPinDots";
 import { Contents, Sidebar } from "components/Sidebar";
 import React from "react";
-import "./Settings.css";
+
+import QrCodeScan from "./QR-Code-Scan.png";
 import RightArrow from "/btn-right-arrow.svg";
+
+import "./Settings.css";
 
 interface ContactInputProps {
   label: string;
@@ -94,6 +97,27 @@ function Security() {
           <div className='inline-block rounded-2xl border border-a-white-100/70'>
             <ButtonSwitch active='left' left='UTC' right='Local' />
           </div>
+
+          <div className='flex justify-between'>
+            <div className='mt-8'>
+              <p className='font-semibold text-a-white-200/80'>2FA Auth:</p>
+              <p className="mb-3">
+                <span className="mr-2">Email 2FA:</span>
+                <label className='relative top-1 inline-flex cursor-pointer items-center'>
+                  <input type='checkbox' value='' className='peer sr-only' />
+                  <div className="peer h-6 w-11 rounded-full bg-red-200 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-red-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-green-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-gray-200 dark:border-red-600 dark:bg-red-700 dark:peer-focus:ring-gray-200"></div>
+                </label>
+              </p>
+              <p className="mb-3">
+                <span className="mr-2">Google 2FA:</span>
+                <label className='relative top-1 inline-flex cursor-pointer items-center'>
+                  <input type='checkbox' value='' className='peer sr-only' />
+                  <div className="peer h-6 w-11 rounded-full bg-red-200 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-red-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-green-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-gray-200 dark:border-red-600 dark:bg-red-700 dark:peer-focus:ring-gray-200"></div>
+                </label>
+              </p>
+            </div>
+            <img className="mr-10" src={QrCodeScan} />
+          </div>
         </div>
       </div>
     </>
@@ -158,8 +182,7 @@ export function Footer() {
 
 export function Settings() {
   return (
-    <div className="group/layout full">
-
+    <div className='group/layout full'>
       <Sidebar />
       <Contents>
         <div className='p-8'>

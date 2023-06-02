@@ -1,11 +1,12 @@
 import classNames from "classnames";
 import { Button } from "components/Button";
+import { ButtonSwitch } from "components/ButtonSwitch";
 import { TopBar } from "components/TopBar/TopBar";
 
-import { ButtonSwitch } from "components/ButtonSwitch";
 import Avatar from "./Avatar-Image.png";
 import ChatIcon from "./Chat-Icon-nav.svg";
 import DarkIcon from "./Dark-Icon.svg";
+import DashboardIcon from "./Dashboard-Icon.svg";
 import ExchangeIcon from "./Exchange-Icon-nav.svg";
 import LightIcon from "./Light-Icon.svg";
 import MarketIcon from "./Market-Icon-nav.svg";
@@ -51,10 +52,13 @@ export function Sidebar() {
         </div>
 
         <div className='px-5'>
-          {/* <button className='flex w-full rounded-2.5xl bg-a-green p-4 shadow-white hover:bg-a-green/80'>
-          <p className='flex-1 self-center font-bold'>Dashboard</p>
-        </button> */}
-          <Button label='Dashboard' />
+          <Button
+          leftElement={
+            <div className="absolute">
+              <img src={DashboardIcon} />
+            </div>
+          }
+          label='Dashboard' />
         </div>
 
         <div className='mt-6 px-9'>
