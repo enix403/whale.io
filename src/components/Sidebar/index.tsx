@@ -22,13 +22,14 @@ interface SidebarLinkProps {
   name: string;
   iconUrl: string;
 }
-function SidebarLink(props: SidebarLinkProps) {
+function SidebarLink(props: React.PropsWithChildren<SidebarLinkProps>) {
   return (
     <div className='group mt-4 flex cursor-pointer first:mt-0'>
       <img src={props.iconUrl} className='mr-4 h-6 w-6' />
       <span className='text-a-white-300 transition-all group-hover:text-white'>
         {props.name}
       </span>
+      {props.children}
     </div>
   );
 }
@@ -53,19 +54,24 @@ export function Sidebar() {
 
         <div className='px-5'>
           <Button
-          leftElement={
-            <div className="absolute">
-              <img src={DashboardIcon} />
-            </div>
-          }
-          label='Dashboard' />
+            leftElement={
+              <div className='absolute'>
+                <img src={DashboardIcon} />
+              </div>
+            }
+            label='Dashboard'
+          />
         </div>
 
         <div className='mt-6 px-9'>
           <SidebarLink iconUrl={ExchangeIcon} name='Exchange' />
           <SidebarLink iconUrl={PriceIcon} name='Live Prices' />
           <SidebarLink iconUrl={WalletIcon} name='Wallet' />
-          <SidebarLink iconUrl={MarketIcon} name='NFT Market' />
+          <SidebarLink iconUrl={MarketIcon} name='NFT Market'>
+            <span className='box-center relative -top-3 left-1 h-5 w-10 self-center rounded-md bg-red-500 text-center text-sm'>
+              New
+            </span>
+          </SidebarLink>
           <SidebarLink iconUrl={TransactionIcon} name='Transaction' />
           <SidebarLink iconUrl={SettingsIcon} name='Settings' />
           <SidebarLink iconUrl={NewsIcon} name='News' />
@@ -73,7 +79,12 @@ export function Sidebar() {
 
         <div className='flex-1'></div>
         <div className='mb-8 mt-4 px-9'>
-          <p className='text-sm text-a-white-200'>Insights</p>
+          <p className='text-sm text-a-white-200 relative'>
+            Insights
+            <span className='box-center absolute top-0 left-24 h-5 w-5 self-center rounded-md bg-red-500 text-center text-sm'>
+              8
+            </span>
+          </p>
           <SidebarLink iconUrl={ChatIcon} name='Inbox' />
 
           <div className='mb-10 mt-2 inline-block rounded-2.5xl bg-a-dark-200 px-1 py-0.5'>
