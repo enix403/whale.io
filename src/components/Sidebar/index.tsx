@@ -24,9 +24,9 @@ interface SidebarLinkProps {
 }
 function SidebarLink(props: React.PropsWithChildren<SidebarLinkProps>) {
   return (
-    <div className='group mt-4 flex cursor-pointer first:mt-0'>
+    <div className='group mt-2 flex cursor-pointer first:mt-0'>
       <img src={props.iconUrl} className='mr-4 h-6 w-6' />
-      <span className='text-a-white-300 transition-all group-hover:text-white'>
+      <span className='text-sm text-a-white-300 transition-all group-hover:text-white'>
         {props.name}
       </span>
       {props.children}
@@ -38,9 +38,9 @@ export function Sidebar() {
   return (
     <>
       <TopBar />
-      <div className='fixed left-0 top-0 z-20 flex h-full max-h-full w-64 flex-col bg-a-dark-300 group-[.full]/layout:pt-24'>
-        <div className='box-center relative bottom-2 border-b-2 border-a-white-100/10 py-8 group-[.full]/layout:mt-2 group-[.full]/layout:border-t-2'>
-          <img src={WhaleLogo} />
+      <div className='fixed left-0 top-0 z-20 flex h-full max-h-full w-52 flex-col overflow-y-scroll bg-a-dark-300 group-[.full]/layout:pt-24'>
+        <div className='box-center relative bottom-2 border-b-2 border-a-white-100/10 py-4 group-[.full]/layout:mt-2 group-[.full]/layout:border-t-2'>
+          <img className='h-10 w-28' src={WhaleLogo} />
         </div>
 
         <div className='my-5 flex flex-col items-center px-5'>
@@ -55,7 +55,7 @@ export function Sidebar() {
         <div className='px-5'>
           <Button
             leftElement={
-              <div className='absolute'>
+              <div className='relative'>
                 <img src={DashboardIcon} />
               </div>
             }
@@ -63,7 +63,7 @@ export function Sidebar() {
           />
         </div>
 
-        <div className='mt-6 px-9'>
+        <div className='mt-6 px-6'>
           <SidebarLink iconUrl={ExchangeIcon} name='Exchange' />
           <SidebarLink iconUrl={PriceIcon} name='Live Prices' />
           <SidebarLink iconUrl={WalletIcon} name='Wallet' />
@@ -78,16 +78,16 @@ export function Sidebar() {
         </div>
 
         <div className='flex-1'></div>
-        <div className='mb-8 mt-4 px-9'>
-          <p className='text-sm text-a-white-200 relative'>
+        <div className='mb-8 mt-6 px-6'>
+          <p className='relative text-sm text-a-white-200'>
             Insights
-            <span className='box-center absolute top-0 left-24 h-5 w-5 self-center rounded-md bg-red-500 text-center text-sm'>
+            <span className='box-center absolute left-24 top-0 h-5 w-5 self-center rounded-md bg-red-500 text-center text-sm'>
               8
             </span>
           </p>
           <SidebarLink iconUrl={ChatIcon} name='Inbox' />
 
-          <div className='mb-10 mt-2 inline-block rounded-2.5xl bg-a-dark-200 px-1 py-0.5'>
+          <div className='mt-4 inline-block rounded-2.5xl bg-a-dark-200 px-1 py-0.5'>
             <ButtonSwitch
               active='right'
               left={
@@ -111,11 +111,12 @@ export function Sidebar() {
 }
 
 export function Contents(props: React.HTMLProps<HTMLDivElement>) {
-  const { className, ...rest } = props;
+  const { className, children, ...rest } = props;
   return (
-    <div
-      {...rest}
-      className={classNames("w-full pb-8 pl-64 pt-24", className)}
-    />
+    <div {...rest} className={classNames("w-full h-full border-box  pb-8 pl-52 pt-24", className)}>
+      <div className="w-full h-full max-h-full">
+        {children}
+      </div>
+    </div>
   );
 }

@@ -15,13 +15,13 @@ export const Button = (props: ButtonProps) => {
     <button
       {...rest}
       className={cx(
-        "flex w-full rounded-2.5xl transition-colors p-4 hover:bg-a-green/80",
+        "flex w-full rounded-2.5xl transition-colors p-3 hover:bg-a-green/80",
         minimal ? "bg-a-white-100/50" : "bg-a-green",
         className
       )}
     >
       {leftElement}
-      <p className='flex-1 self-center font-bold'>{label}</p>
+      <p className='flex-1 self-center font-bold text-sm'>{label}</p>
       {rightElement}
     </button>
   );

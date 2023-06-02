@@ -20,7 +20,7 @@ function DepositPane() {
       </div>
 
       <span className='font-semibold text-a-white-200'>Preferred Payment</span>
-      <div className='mt-8 pr-10'>
+      <div className='mt-8 pr-6'>
         <p className='mb-4 ml-6 text-sm text-a-white-200'>Coin:</p>
         <CoinSelect />
       </div>
@@ -113,7 +113,7 @@ function PricePane() {
 
 export function Deposit1Page() {
   return (
-    <div className="group/layout full">
+    <div className="group/layout">
       <Sidebar />
       <Contents>
         <div className='p-8 xl:flex'>

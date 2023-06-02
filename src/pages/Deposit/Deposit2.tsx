@@ -44,8 +44,8 @@ const RefreshIcon = () => (
 function CoinTransfer() {
   return (
     <CoinViewBox>
-      <p className='box-center mr-4 ml-0 flex-col lg:ml-16 lg:flex-row'>
-        <span className='mx-2 text-a-white-200/80'>Transfer:</span>
+      <p className='box-center mr-2 ml-0 flex-col lg:ml-2 lg:flex-row'>
+        <span className='text-a-white-200/80'>Transfer:</span>
         0.02347 BTC
       </p>
       <CopyButton />

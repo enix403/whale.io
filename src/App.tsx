@@ -19,10 +19,10 @@ export function App() {
       {/* <AffiliatePage /> */}
       {/* <TradeHistory /> */}
       {/* <Settings /> */}
+      {/* <Deposit1Page /> */}
       {/* <Deposit /> */}
       {/* <Deposit2 /> */}
       {/* <WithdrawPage /> */}
-      {/* <Deposit1Page /> */}
       <DashboardPage />
     </>
   );

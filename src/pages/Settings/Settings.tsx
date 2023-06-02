@@ -187,7 +187,7 @@ export function Footer() {
 
 export function Settings() {
   return (
-    <div className='group/layout full'>
+    <div className='group/layout'>
       <Sidebar />
       <Contents>
         <div className='p-8'>

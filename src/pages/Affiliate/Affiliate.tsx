@@ -152,10 +152,10 @@ function Banner() {
 
 export function AffiliatePage() {
   return (
-    <div className="group/layout full">
+    <div className="group/layout">
       <Sidebar />
       <Contents>
-        <div className='px-12 py-20'>
+        <div className='px-1 py-20'>
           <div className='xl:flex'>
             <div className='flex-1 xl:px-12'>
               <div className='mb-10'>
@@ -164,7 +164,7 @@ export function AffiliatePage() {
               <Dashboard />
               <DashboardAlert />
             </div>
-            <div className='h-full w-96 pt-20'>
+            <div className='h-full w-72 mr-6 pt-20'>
               <Banner />
             </div>
           </div>

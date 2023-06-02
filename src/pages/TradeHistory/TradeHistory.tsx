@@ -115,7 +115,7 @@ function PaginationButton({ label, active }: PaginationButtonProps) {
   return (
     <div
       className={cx(
-        "box-center mx-1 aspect-square w-12 cursor-pointer rounded-2.5xl transition-colors hover:bg-a-green/80",
+        "box-center mx-1 last:mr-0 aspect-square w-12 cursor-pointer rounded-2.5xl transition-colors hover:bg-a-green/80",
         active ? "bg-a-green" : "border-2 border-a-white-100/20"
       )}
     >

@@ -15,7 +15,7 @@ function DepositPane() {
         <ButtonSwitch active='left' left='Crypto' right='Fiat' />
       </div>
 
-      <div className='mt-10 pr-10'>
+      <div className='mt-10 pr-6'>
         <p className='my-2 ml-6 text-sm text-a-white-200'>Coin:</p>
         <CoinSelect />
       </div>

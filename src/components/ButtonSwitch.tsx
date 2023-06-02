@@ -23,7 +23,7 @@ export function ButtonSwitch(props: ButtonSwitchProps) {
     <div className='inline-flex h-full w-full cursor-pointer items-stretch p-1'>
       <div
         className={cx(
-          "box-center mr-1 flex-1 rounded-1.5xl px-4 py-2 transition-all",
+          "box-center text-sm mr-1 flex-1 rounded-xl px-2 py-1.5 transition-all",
           getClass("left")
         )}
       >
@@ -31,7 +31,7 @@ export function ButtonSwitch(props: ButtonSwitchProps) {
       </div>
       <div
         className={cx(
-          "box-center ml-1 flex-1 rounded-1.5xl px-4 py-2 transition-all",
+          "box-center text-sm ml-1 flex-1 rounded-xl px-2 py-1.5 transition-all",
           getClass("right")
         )}
       >

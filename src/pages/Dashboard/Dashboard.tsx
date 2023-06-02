@@ -256,6 +256,7 @@ function ActivitiesTable() {
           </tbody>
         </table>
       </div>
+
     </>
   );
 }
@@ -416,7 +417,7 @@ function WheelChart() {
 
       <div className='flex'>
         <div className='flex flex-1'>
-          <div className='box-center'>
+          <div className='box-center relative'>
             <img className='w-14' src={Daigram1} />
             <p className='absolute text-sm font-semibold text-a-white-200/80'>
               35%
@@ -429,7 +430,7 @@ function WheelChart() {
         </div>
 
         <div className='flex flex-1'>
-          <div className='box-center'>
+          <div className='box-center relative'>
             <img className='w-14' src={Daigram2} />
             <p className='absolute text-sm font-semibold text-a-white-200/80'>
               5%
@@ -444,7 +445,7 @@ function WheelChart() {
 
       <div className='mb-4 mt-8 flex border-b border-a-white-100/80 pb-6'>
         <div className='flex flex-1'>
-          <div className='box-center'>
+          <div className='box-center relative'>
             <img className='w-14' src={Daigram3} />
             <p className='absolute text-sm font-semibold text-a-white-200/80'>
               50%
@@ -457,7 +458,7 @@ function WheelChart() {
         </div>
 
         <div className='flex flex-1'>
-          <div className='box-center'>
+          <div className='box-center relative'>
             <img className='w-14' src={Daigram4} />
             <p className='absolute text-sm font-semibold text-a-white-200/80'>
               10%
@@ -492,22 +493,26 @@ function BalancePane() {
 
 export function DashboardPage() {
   return (
-    <div className='group/layout full'>
+    <div className='group/layout'>
       <Sidebar />
       <Contents>
-        <div className='px-14 py-14 lg:flex'>
-          <div className='flex-[3.2] lg:mr-16'>
+
+        <div className='p-12 lg:flex'>
+          <div className='flex-[2.5] lg:mr-16'>
             <TopStats />
             <ProfitChart />
             <ActivitiesTable />
           </div>
-          <div className='flex-[1]'>
+          <div className='flex-[1] flex-shrink-0'>
             <BalancePane />
           </div>
         </div>
+
+
         <div className='px-14'>
           <MarketPrices />
         </div>
+
       </Contents>
     </div>
   );

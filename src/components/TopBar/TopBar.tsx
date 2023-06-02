@@ -8,7 +8,7 @@ import Settings from "./Settings.svg";
 
 const SearchInput = () => {
   return (
-    <div className='ml-8 flex h-16 w-96 rounded-2.5xl bg-a-dark-200'>
+    <div className='ml-8 flex h-12 w-96 rounded-2.5xl bg-a-dark-200'>
       <p className='box-center ml-6 self-stretch'>
         <img src={SearchIcon} />
       </p>
@@ -45,7 +45,7 @@ const IconButton = ({ children }: React.PropsWithChildren) => (
 
 const TopBarContents = () => {
   return (
-    <div className='h-full pl-64 group-[.full]/layout:pl-0'>
+    <div className='h-full pl-52 group-[.full]/layout:pl-0'>
       <div className='flex h-full items-center border-l-2 border-a-white-100/10 bg-a-dark-300 px-6'>
         <img className='ml-8' src={VecBlocks} />
         <SearchInput />
@@ -70,7 +70,7 @@ const TopBarContents = () => {
 
 export const TopBar = () => {
   return (
-    <div className='fixed z-10 group-[.full]/layout:z-30 h-24 w-full'>
+    <div className='fixed z-10 group-[.full]/layout:z-30 h-16 w-full'>
       <TopBarContents />
     </div>
   );
