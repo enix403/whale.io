@@ -2,6 +2,9 @@ import {
   Area,
   AreaChart,
   CartesianGrid,
+  Cell,
+  Pie,
+  PieChart,
   ResponsiveContainer,
   Tooltip,
   TooltipProps,
@@ -238,7 +241,7 @@ function AppTooltip({ active, payload }: TooltipProps<any, any>) {
 interface SubChartProps {
   color: string;
 }
-export const SubChart = ({color}: SubChartProps) => {
+export const SubChart = ({ color }: SubChartProps) => {
   return (
     <ResponsiveContainer width='100%' height={72}>
       <AreaChart
@@ -253,7 +256,10 @@ export const SubChart = ({color}: SubChartProps) => {
         }}
       >
         <defs>
-          <linearGradient id={'subFill-' + color} gradientTransform='rotate(90)'>
+          <linearGradient
+            id={"subFill-" + color}
+            gradientTransform='rotate(90)'
+          >
             <stop offset='5%' stopColor={color} stopOpacity={0.4} />
             <stop offset='90%' stopColor={color} stopOpacity={0.01} />
           </linearGradient>
@@ -269,5 +275,67 @@ export const SubChart = ({color}: SubChartProps) => {
         />
       </AreaChart>
     </ResponsiveContainer>
+  );
+};
+
+const data = [
+  { name: "A", value: 50, color: "#674AFF" },
+  { name: "A", value: 50, color: "#02C39A" },
+  { name: "B", value: 50, color: "#FFAA35" },
+  { name: "C", value: 50, color: "#3D3E52" }
+];
+
+const cx = 70;
+const cy = 80;
+const iR = 60;
+const oR = 70;
+
+export function MainPieChart() {
+  return (
+    <PieChart width={150} height={150}>
+      <Pie
+        dataKey='value'
+        startAngle={210}
+        endAngle={-30}
+        data={data}
+        cx={cx}
+        cy={cy}
+        innerRadius={iR}
+        outerRadius={oR}
+        fill='#8884d8'
+        stroke='none'
+      >
+        {data.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={entry.color} />
+        ))}
+      </Pie>
+    </PieChart>
+  );
+}
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+export const MiniChart = ({ value, color }) => {
+  const data = [
+    { value, color },
+    { value: 100 - value, color: "#3D3E52" }
+  ];
+  return (
+    <PieChart width={50} height={50}>
+      <Pie
+        dataKey='value'
+        startAngle={210}
+        endAngle={-30}
+        data={data}
+        innerRadius={20}
+        outerRadius={25}
+        fill='gray'
+        stroke='none'
+      >
+        {data.map((entry, index) => (
+          <Cell key={`m-cell-${entry.color}-${index}`} fill={entry.color} />
+        ))}
+      </Pie>
+    </PieChart>
   );
 };

@@ -4,7 +4,7 @@ import { Button } from "components/Button";
 import { Exchange, ExchangeCircle, ExchangeSide } from "components/Exchange";
 import { Contents, Sidebar } from "components/Sidebar";
 import { SortArrow } from "components/SortArrow";
-import { MainChart, SubChart } from "./chart";
+import { MainChart, MainPieChart, MiniChart, SubChart } from "./chart";
 
 import CoinBTC from "assets/CoinBTC.svg";
 import CoinBTCBlue from "assets/CoinBTCBlue.svg";
@@ -256,7 +256,6 @@ function ActivitiesTable() {
           </tbody>
         </table>
       </div>
-
     </>
   );
 }
@@ -411,14 +410,20 @@ function ExchangeBox() {
 function WheelChart() {
   return (
     <div>
-      <div className='box-center mb-6'>
-        <img src={DaigramM} />
+      <div className='box-center relative mb-6'>
+        <MainPieChart />
+        <div className='absolute h-20 overflow-hidden'>
+          <div className='aspect-square h-24 rounded-full bg-a-dark-300/90 p-3'>
+            <p className='box-center mt-3 text-center font-semibold'>$69300</p>
+            <p className='box-center mt-1 text-xs text-center'>0.0140 BTC</p>
+          </div>
+        </div>
       </div>
 
       <div className='flex'>
         <div className='flex flex-1'>
           <div className='box-center relative'>
-            <img className='w-14' src={Daigram1} />
+            <MiniChart value={35} color="orange" />
             <p className='absolute text-sm font-semibold text-a-white-200/80'>
               35%
             </p>
@@ -431,7 +436,7 @@ function WheelChart() {
 
         <div className='flex flex-1'>
           <div className='box-center relative'>
-            <img className='w-14' src={Daigram2} />
+            <MiniChart value={5} color="#4464EE" />
             <p className='absolute text-sm font-semibold text-a-white-200/80'>
               5%
             </p>
@@ -446,7 +451,7 @@ function WheelChart() {
       <div className='mb-4 mt-8 flex border-b border-a-white-100/80 pb-6'>
         <div className='flex flex-1'>
           <div className='box-center relative'>
-            <img className='w-14' src={Daigram3} />
+            <MiniChart value={50} color="#FB774A" />
             <p className='absolute text-sm font-semibold text-a-white-200/80'>
               50%
             </p>
@@ -459,7 +464,7 @@ function WheelChart() {
 
         <div className='flex flex-1'>
           <div className='box-center relative'>
-            <img className='w-14' src={Daigram4} />
+            <MiniChart value={10} color="#26A17B" />
             <p className='absolute text-sm font-semibold text-a-white-200/80'>
               10%
             </p>
@@ -482,7 +487,7 @@ function WheelChart() {
 function BalancePane() {
   return (
     <>
-      <h1 className='mb-10 flex items-center justify-between pr-10 text-lg font-bold'>
+      <h1 className='mb-5 flex items-center justify-between pr-10 text-lg font-bold'>
         <span className='ml-2'>Balance</span>
       </h1>
       <WheelChart />
@@ -496,9 +501,8 @@ export function DashboardPage() {
     <div className='group/layout'>
       <Sidebar />
       <Contents>
-
         <div className='p-12 lg:flex'>
-          <div className='flex-[2.5] lg:mr-16'>
+          <div className='flex-[2] lg:mr-6'>
             <TopStats />
             <ProfitChart />
             <ActivitiesTable />
@@ -508,11 +512,9 @@ export function DashboardPage() {
           </div>
         </div>
 
-
         <div className='px-14'>
           <MarketPrices />
         </div>
-
       </Contents>
     </div>
   );
