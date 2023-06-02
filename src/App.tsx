@@ -17,8 +17,8 @@ export function App() {
     <>
       {/* <LoginPage /> */}
       {/* <AffiliatePage /> */}
-      {/* <TradeHistory /> */}
-      <Settings />
+      <TradeHistory />
+      {/* <Settings /> */}
       {/* <Deposit /> */}
       {/* <Deposit2 /> */}
       {/* <WithdrawPage /> */}

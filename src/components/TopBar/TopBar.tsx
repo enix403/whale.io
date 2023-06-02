@@ -1,9 +1,9 @@
 import { LanguageSelect } from 'components/LanguageSelect';
 
+import SearchIcon from "assets/SearchIcon.svg";
 import VecBlocks from "assets/vector-blocks.png";
 import Folder from "./Folder.svg";
 import Notification from "./Notification.svg";
-import SearchIcon from "./SearchIcon.svg";
 import Settings from "./Settings.svg";
 
 const SearchInput = () => {

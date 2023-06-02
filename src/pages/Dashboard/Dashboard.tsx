@@ -1,4 +1,5 @@
 import cx from "classnames";
+import { ActivityFilters } from "components/ActivityFilters";
 import { Button } from "components/Button";
 import { Exchange, ExchangeCircle, ExchangeSide } from "components/Exchange";
 import { Contents, Sidebar } from "components/Sidebar";
@@ -185,60 +186,68 @@ function ActivityRow(props: ActivityRowProps) {
 
 function ActivitiesTable() {
   return (
-    <div className='mt-12 w-full max-w-full overflow-auto'>
-      <table className='app-table'>
-        <thead>
-          <tr className='border-b border-a-white-100/30 text-a-white-900/80 [&>th]:pb-4 [&>th]:pr-8 lg:[&>th]:pr-0'>
-            <th>
-              Coin
-              <SortArrow />
-            </th>
-            <th>
-              Transaction
-              <SortArrow />
-            </th>
-            <th>
-              ID
-              <SortArrow />
-            </th>
-            <th>
-              Date
-              <SortArrow />
-            </th>
-            <th>
-              Status
-              <SortArrow />
-            </th>
-            <th>
-              Fees
-              <SortArrow />
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <ActivityRow
-            iconUrl={CoinBTC}
-            status='Completed'
-            statusColor='#0CAF60'
-          />
-          <ActivityRow
-            iconUrl={CoinUSDT}
-            status='Declined'
-            statusColor='#FF5449'
-          />
-          <ActivityRow
-            iconUrl={CoinTRX}
-            status='Pending'
-            statusColor='#FB774A'
-          />
-          <ActivityRow
-            iconUrl={CoinUSDT}
-            status='Completed'
-            statusColor='#0CAF60'
-          />
-        </tbody>
-      </table>
-    </div>
+    <>
+      <div className='my-8 items-center lg:flex'>
+        <h1 className='mb-4 ml-6 font-semibold lg:mb-0'>Recent Activies</h1>
+        <div className='flex-grow'></div>
+        <ActivityFilters />
+      </div>
+
+      <div className='w-full max-w-full overflow-auto'>
+        <table className='app-table'>
+          <thead>
+            <tr className='border-b border-a-white-100/30 text-a-white-900/80 [&>th]:pb-4 [&>th]:pr-8 lg:[&>th]:pr-0'>
+              <th>
+                Coin
+                <SortArrow />
+              </th>
+              <th>
+                Transaction
+                <SortArrow />
+              </th>
+              <th>
+                ID
+                <SortArrow />
+              </th>
+              <th>
+                Date
+                <SortArrow />
+              </th>
+              <th>
+                Status
+                <SortArrow />
+              </th>
+              <th>
+                Fees
+                <SortArrow />
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <ActivityRow
+              iconUrl={CoinBTC}
+              status='Completed'
+              statusColor='#0CAF60'
+            />
+            <ActivityRow
+              iconUrl={CoinUSDT}
+              status='Declined'
+              statusColor='#FF5449'
+            />
+            <ActivityRow
+              iconUrl={CoinTRX}
+              status='Pending'
+              statusColor='#FB774A'
+            />
+            <ActivityRow
+              iconUrl={CoinUSDT}
+              status='Completed'
+              statusColor='#0CAF60'
+            />
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 }
 
@@ -265,7 +274,9 @@ function MarketPriceBox(props: MarketPriceBoxProps) {
   return (
     <div className='mb-6 last:pr-0 lg:w-1/4 lg:pr-16'>
       <div className='flex items-start'>
-        <div className={cx('rounded-full p-0.5', `price-logo-${props.iconBorder}`)}>
+        <div
+          className={cx("rounded-full p-0.5", `price-logo-${props.iconBorder}`)}
+        >
           <img
             className='min-h-[32px] min-w-[32px] rounded-full border-8 border-a-dark-100'
             src={props.iconUrl}
@@ -281,7 +292,6 @@ function MarketPriceBox(props: MarketPriceBoxProps) {
       </div>
 
       <SubChart color={props.chartColor} />
-
     </div>
   );
 }
@@ -292,10 +302,30 @@ function MarketPrices() {
       <p className='mb-12 font-semibold text-white'>Market Prices</p>
 
       <div className='lg:flex'>
-        <MarketPriceBox iconBorder="btc" iconUrl={CoinBTC} label="Bitcoin" chartColor="#0CAF60" />
-        <MarketPriceBox iconBorder="ustd" iconUrl={CoinUSDT} label="Theter" chartColor="#0CAF60" />
-        <MarketPriceBox iconBorder="uniswap" iconUrl={CoinUniSwap} label="UniSwap" chartColor="#FF5449" />
-        <MarketPriceBox iconBorder="btc-blue" iconUrl={CoinBTCBlue} label="Bitcoin" chartColor="#0CAF60" />
+        <MarketPriceBox
+          iconBorder='btc'
+          iconUrl={CoinBTC}
+          label='Bitcoin'
+          chartColor='#0CAF60'
+        />
+        <MarketPriceBox
+          iconBorder='ustd'
+          iconUrl={CoinUSDT}
+          label='Theter'
+          chartColor='#0CAF60'
+        />
+        <MarketPriceBox
+          iconBorder='uniswap'
+          iconUrl={CoinUniSwap}
+          label='UniSwap'
+          chartColor='#FF5449'
+        />
+        <MarketPriceBox
+          iconBorder='btc-blue'
+          iconUrl={CoinBTCBlue}
+          label='Bitcoin'
+          chartColor='#0CAF60'
+        />
       </div>
     </>
   );
@@ -376,7 +406,7 @@ function BalancePane() {
 
 export function DashboardPage() {
   return (
-    <div className="group/layout full">
+    <div className='group/layout full'>
       <Sidebar />
       <Contents>
         <div className='px-14 py-14 lg:flex'>
