@@ -1,3 +1,4 @@
+import cx from "classnames";
 import { Button } from "components/Button";
 import { Exchange, ExchangeCircle, ExchangeSide } from "components/Exchange";
 import { Contents, Sidebar } from "components/Sidebar";
@@ -7,6 +8,7 @@ import CoinUSDT from "assets/CoinUSDT.svg";
 import SwapIconH from "assets/SwapIconH.svg";
 import HistoryIcon from "./HistoryIcon.svg";
 import SettingsIcon from "./SettingsIcon.svg";
+import { MainChart } from "./chart";
 import RightArrow from "/btn-right-arrow.svg";
 
 const SelectDownArrow = () => (
@@ -37,10 +39,10 @@ const Stat = (props: StatProps) => {
   const progress = props.progress || 0;
 
   return (
-    <div className='flex-1 pr-16 last:pr-0'>
-      <p className='text-2xl mb-4 font-bold'>{props.stat}</p>
+    <div className='flex-1 mb-6 lg:pr-16 last:pr-0'>
+      <p className='mb-4 text-2xl font-bold'>{props.stat}</p>
 
-      <p className='my-4 flex items-center'>
+      <div className='my-4 flex items-center'>
         <div
           className='aspect-square h-8 rounded-lg p-2.5'
           style={{ backgroundColor: color }}
@@ -48,7 +50,7 @@ const Stat = (props: StatProps) => {
           <div className='h-full w-full rounded-full bg-white' />
         </div>
         <span className='ml-4 text-a-white-200'>{props.label}</span>
-      </p>
+      </div>
 
       <div className='overflow-hidden rounded-2.5xl bg-a-dark-300'>
         <div
@@ -65,7 +67,7 @@ const Stat = (props: StatProps) => {
 
 function TopStats() {
   return (
-    <div className='flex'>
+    <div className='lg:flex'>
       <Stat
         progress={0.49}
         color='#0CAF60'
@@ -94,14 +96,58 @@ function TopStats() {
   );
 }
 
+interface ProfileActionBtnProps {
+  label: string;
+  active?: boolean;
+}
+function ProfileActionBtn(props: ProfileActionBtnProps) {
+  return (
+    <div
+      className={cx(
+        "ml-2 inline cursor-pointer rounded-lg px-4 py-1 text-sm transition-colors",
+        props.active
+          ? "bg-a-green"
+          : "border-2 border-a-white-100/40 bg-transparent hover:bg-a-green"
+      )}
+    >
+      {props.label}
+    </div>
+  );
+}
+
+function ProfileActions() {
+  return (
+    <div>
+      <ProfileActionBtn active label='All' />
+      <ProfileActionBtn label='1M' />
+      <ProfileActionBtn label='6M' />
+      <ProfileActionBtn label='1Y' />
+      <ProfileActionBtn label='YTD' />
+    </div>
+  );
+}
+
+function ProfitChart() {
+  return (
+    <div className='mt-10'>
+      <div className='flex items-center justify-between'>
+        <p className='font-semibold text-white'>Portflio Stats</p>
+        <ProfileActions />
+      </div>
+
+      <MainChart />
+    </div>
+  );
+}
+
 function ExchangeBox() {
   return (
     <>
       <h1 className='mb-10 flex items-center pr-4 text-lg font-bold'>
         <span className='ml-2'>Quick Exchange</span>
         <span className='flex-grow' />
-        <img className="mx-2 cursor-pointer" src={SettingsIcon} />
-        <img className="mx-2 cursor-pointer" src={HistoryIcon} />
+        <img className='mx-2 cursor-pointer' src={SettingsIcon} />
+        <img className='mx-2 cursor-pointer' src={HistoryIcon} />
       </h1>
 
       <Exchange
@@ -170,9 +216,10 @@ export function DashboardPage() {
     <>
       <Sidebar />
       <Contents>
-        <div className='flex px-14 py-14'>
-          <div className='mr-20 flex-[3.2]'>
+        <div className='lg:flex px-14 py-14'>
+          <div className='lg:mr-16 flex-[3.2]'>
             <TopStats />
+            <ProfitChart />
           </div>
           <div className='flex-[1]'>
             <BalancePane />
