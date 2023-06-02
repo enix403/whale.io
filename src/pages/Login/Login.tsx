@@ -1,6 +1,7 @@
 import { Button } from "components/Button";
 import { ButtonSwitch } from "components/ButtonSwitch";
 import { InputGroup } from "components/InputGroup";
+import { LanguageSelect } from 'components/LanguageSelect';
 import {
   AtRate,
   Check,
@@ -11,9 +12,9 @@ import {
   RefCode
 } from "./icons";
 
+import VecBlocks from "assets/vector-blocks.png";
 import QrCpde from "./Qrcode.svg";
 import Lock from "./lock.svg";
-import vecBlocks from "./vector-blocks.png";
 import RightArrow from "/btn-right-arrow.svg";
 import whaleLogo from "/whale-logo.png";
 
@@ -21,17 +22,22 @@ function Navbar() {
   return (
     <div className='flex h-24 items-center bg-a-dark-300 px-28'>
       <img className='relative bottom-2' src={whaleLogo} />
-      <img className='ml-10' src={vecBlocks} />
+      <img className='ml-10' src={VecBlocks} />
       <div className='ml-8'>
         <div className='mr-6 inline'>Buy Crypto</div>
         <div className='mr-6 inline'>Market</div>
-        <div className='mr-6 inline'>NFT</div>
+        <div className='mr-12 inline relative'>
+          NFT
+          <span className='box-center absolute left-6 -top-4 h-5 w-10  self-center rounded-md bg-red-500 text-center text-sm'>
+            New
+          </span>
+        </div>
         <div className='mr-6 inline'>Promotion</div>
         <div className='mr-6 inline'>About</div>
         <div className='mr-6 inline'>Blog</div>
       </div>
       <div className='flex-1'></div>
-      <div className='rounded-xl bg-a-dark-200 px-4 py-3'>English</div>
+      <LanguageSelect />
     </div>
   );
 }

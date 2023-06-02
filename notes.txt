@@ -1,0 +1,8 @@
+circle graphs
+hover tooltip rectangle and dot
+main axis
+market pice arrows dashboard
+sidebar theme switch
+random tags
+
+topbar
