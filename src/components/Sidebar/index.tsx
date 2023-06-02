@@ -38,7 +38,7 @@ export function Sidebar() {
   return (
     <>
       <TopBar />
-      <div className='fixed left-0 top-0 z-20 flex max-h-full w-64 flex-col bg-a-dark-300 group-[.full]/layout:pt-24'>
+      <div className='fixed left-0 top-0 z-20 flex h-full max-h-full w-64 flex-col bg-a-dark-300 group-[.full]/layout:pt-24'>
         <div className='box-center relative bottom-2 border-b-2 border-a-white-100/10 py-8 group-[.full]/layout:mt-2 group-[.full]/layout:border-t-2'>
           <img src={WhaleLogo} />
         </div>
