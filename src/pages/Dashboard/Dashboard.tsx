@@ -19,12 +19,6 @@ import SeeAllArrow from "./SeeAllArrow.svg";
 import SettingsIcon from "./SettingsIcon.svg";
 import RightArrow from "/btn-right-arrow.svg";
 
-import Daigram1 from "./Diagram1.png";
-import Daigram2 from "./Diagram2.png";
-import Daigram3 from "./Diagram3.png";
-import Daigram4 from "./Diagram4.png";
-import DaigramM from "./DiagramM.png";
-
 import "./Dashboard.css";
 
 interface SelectDownArrowProps {
@@ -421,7 +415,7 @@ function WheelChart() {
       </div>
 
       <div className='flex'>
-        <div className='flex flex-1'>
+        <div className='flex flex-1 box-center'>
           <div className='box-center relative'>
             <MiniChart value={35} color="orange" />
             <p className='absolute text-sm font-semibold text-a-white-200/80'>
@@ -434,7 +428,7 @@ function WheelChart() {
           </div>
         </div>
 
-        <div className='flex flex-1'>
+        <div className='flex flex-1 box-center'>
           <div className='box-center relative'>
             <MiniChart value={5} color="#4464EE" />
             <p className='absolute text-sm font-semibold text-a-white-200/80'>
@@ -449,7 +443,7 @@ function WheelChart() {
       </div>
 
       <div className='mb-4 mt-8 flex border-b border-a-white-100/80 pb-6'>
-        <div className='flex flex-1'>
+        <div className='flex flex-1 box-center'>
           <div className='box-center relative'>
             <MiniChart value={50} color="#FB774A" />
             <p className='absolute text-sm font-semibold text-a-white-200/80'>
@@ -462,7 +456,7 @@ function WheelChart() {
           </div>
         </div>
 
-        <div className='flex flex-1'>
+        <div className='flex flex-1 box-center'>
           <div className='box-center relative'>
             <MiniChart value={10} color="#26A17B" />
             <p className='absolute text-sm font-semibold text-a-white-200/80'>
@@ -501,7 +495,7 @@ export function DashboardPage() {
     <div className='group/layout'>
       <Sidebar />
       <Contents>
-        <div className='p-12 lg:flex'>
+        <div className='p-12 pt-0 lg:flex'>
           <div className='flex-[2] lg:mr-6'>
             <TopStats />
             <ProfitChart />

@@ -15,7 +15,7 @@ import { TradeHistory } from './pages/TradeHistory/TradeHistory';
 export function App() {
   return (
     <>
-      {/* <LoginPage /> */}
+      <LoginPage />
       {/* <AffiliatePage /> */}
       {/* <TradeHistory /> */}
       {/* <Settings /> */}
@@ -23,7 +23,7 @@ export function App() {
       {/* <Deposit /> */}
       {/* <Deposit2 /> */}
       {/* <WithdrawPage /> */}
-      <DashboardPage />
+      {/* <DashboardPage /> */}
     </>
   );
 }
